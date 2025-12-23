@@ -8,10 +8,6 @@
         "maxLambdaSize": "15mb",
         "runtime": "python3.12"
       }
-    },
-    {
-      "src": "app/webapp/static/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -23,7 +19,5 @@
       "src": "/(.*)",
       "dest": "app/webapp/config/wsgi.py"
     }
-  ],
-  "installCommand": "pip install -r app/requirements.txt",
-  "outputDirectory": "app/webapp"
+  ]
 }

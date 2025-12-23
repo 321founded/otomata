@@ -137,89 +137,169 @@
 </section>
 
 <!-- Comment ça marche -->
-<section id="comment" class="py-24 bg-gray-50">
+<section id="comment" class="py-24 bg-white">
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="font-display text-4xl italic text-center mb-4">Comment ça marche</h2>
-    <p class="text-gray-500 text-center mb-12 max-w-xl mx-auto">Des agents IA autonomes qui orchestrent vos outils et exécutent vos workflows.</p>
+    <p class="text-gray-600 text-center mb-12 max-w-xl mx-auto">Des agents IA autonomes qui orchestrent vos outils et exécutent vos workflows.</p>
 
-    <!-- SVG Diagram -->
-    <div class="rounded-2xl shadow-xl overflow-hidden mb-16 border border-gray-200 bg-white">
-      <img src="{% static 'images/schema-script-agentique.svg' %}" alt="Architecture Otomata" class="w-full">
+    <!-- SVG Diagram Slider -->
+    <div class="relative mb-16">
+      <div class="rounded-2xl shadow-xl overflow-hidden border border-retro-orange/20 bg-white">
+        <div id="schemaSlider" class="relative">
+          <div class="schema-slide active" data-index="0">
+            <img src="{% static 'images/schema-script-agentique.svg' %}" alt="Agent Prospection B2B" class="w-full">
+          </div>
+          <div class="schema-slide" data-index="1">
+            <img src="{% static 'images/schema-onboarding.svg' %}" alt="Agent Onboarding RH" class="w-full">
+          </div>
+          <div class="schema-slide" data-index="2">
+            <img src="{% static 'images/schema-finance.svg' %}" alt="Agent Rapprochement Finance" class="w-full">
+          </div>
+          <div class="schema-slide" data-index="3">
+            <img src="{% static 'images/schema-veille.svg' %}" alt="Agent Veille Concurrentielle" class="w-full">
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation arrows -->
+      <button id="schemaPrev" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button id="schemaNext" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center text-gray-600 hover:text-gray-900 transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </button>
+
+      <!-- Dots -->
+      <div class="flex justify-center gap-2 mt-4">
+        <button class="schema-dot active w-3 h-3 rounded-full bg-gray-300 transition" data-index="0"></button>
+        <button class="schema-dot w-3 h-3 rounded-full bg-gray-300 transition" data-index="1"></button>
+        <button class="schema-dot w-3 h-3 rounded-full bg-gray-300 transition" data-index="2"></button>
+        <button class="schema-dot w-3 h-3 rounded-full bg-gray-300 transition" data-index="3"></button>
+      </div>
+
+      <!-- Labels -->
+      <div class="flex justify-center gap-4 mt-3 text-sm text-gray-500 flex-wrap">
+        <span class="schema-label font-medium text-gray-900 cursor-pointer hover:text-gray-700" data-index="0">Prospection B2B</span>
+        <span class="schema-label cursor-pointer hover:text-gray-700" data-index="1">Onboarding RH</span>
+        <span class="schema-label cursor-pointer hover:text-gray-700" data-index="2">Rapprochement Finance</span>
+        <span class="schema-label cursor-pointer hover:text-gray-700" data-index="3">Veille Concurrentielle</span>
+      </div>
     </div>
+
+    <style>
+      .schema-slide { display: none; }
+      .schema-slide.active { display: block; }
+      .schema-dot.active { background-color: #f59e0b; }
+    </style>
+
+    <script>
+      (function() {
+        let current = 0;
+        const slides = document.querySelectorAll('.schema-slide');
+        const dots = document.querySelectorAll('.schema-dot');
+        const labels = document.querySelectorAll('.schema-label');
+        const total = slides.length;
+
+        function goTo(index) {
+          slides[current].classList.remove('active');
+          dots[current].classList.remove('active');
+          labels[current].classList.remove('font-medium', 'text-gray-900');
+          labels[current].classList.add('text-gray-500');
+
+          current = (index + total) % total;
+
+          slides[current].classList.add('active');
+          dots[current].classList.add('active');
+          labels[current].classList.add('font-medium', 'text-gray-900');
+          labels[current].classList.remove('text-gray-500');
+        }
+
+        document.getElementById('schemaPrev').addEventListener('click', () => goTo(current - 1));
+        document.getElementById('schemaNext').addEventListener('click', () => goTo(current + 1));
+
+        dots.forEach(dot => {
+          dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index)));
+        });
+
+        labels.forEach(label => {
+          label.addEventListener('click', () => goTo(parseInt(label.dataset.index)));
+        });
+
+        // Auto-advance every 6s
+        setInterval(() => goTo(current + 1), 6000);
+      })();
+    </script>
 
     <!-- Process steps -->
     <div class="grid md:grid-cols-4 gap-6">
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <div class="w-10 h-10 bg-sky-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">1</div>
+      <div class="bg-retro-cream rounded-xl p-6 border border-retro-blue/20">
+        <div class="w-10 h-10 bg-retro-blue text-white rounded-lg flex items-center justify-center font-bold mb-4">1</div>
         <h3 class="font-semibold mb-2">Brief</h3>
-        <p class="text-gray-500 text-sm">Vous décrivez votre process et vos contraintes</p>
+        <p class="text-gray-600 text-sm">Vous décrivez votre process et vos contraintes</p>
       </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <div class="w-10 h-10 bg-amber-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">2</div>
+      <div class="bg-retro-cream rounded-xl p-6 border border-retro-orange/20">
+        <div class="w-10 h-10 bg-retro-orange text-white rounded-lg flex items-center justify-center font-bold mb-4">2</div>
         <h3 class="font-semibold mb-2">Configuration</h3>
-        <p class="text-gray-500 text-sm">On configure les agents avec vos spécifications</p>
+        <p class="text-gray-600 text-sm">On configure les agents avec vos spécifications</p>
       </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <div class="w-10 h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">3</div>
+      <div class="bg-retro-cream rounded-xl p-6 border border-retro-yellow/30">
+        <div class="w-10 h-10 bg-retro-yellow text-gray-900 rounded-lg flex items-center justify-center font-bold mb-4">3</div>
         <h3 class="font-semibold mb-2">Exécution</h3>
-        <p class="text-gray-500 text-sm">Les agents exécutent le workflow automatiquement</p>
+        <p class="text-gray-600 text-sm">Les agents exécutent le workflow automatiquement</p>
       </div>
-      <div class="bg-white rounded-xl p-6 border border-gray-200">
-        <div class="w-10 h-10 bg-emerald-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">4</div>
+      <div class="bg-retro-cream rounded-xl p-6 border border-retro-green/20">
+        <div class="w-10 h-10 bg-retro-green text-white rounded-lg flex items-center justify-center font-bold mb-4">4</div>
         <h3 class="font-semibold mb-2">Résultats</h3>
-        <p class="text-gray-500 text-sm">Vous recevez les outputs dans vos outils</p>
+        <p class="text-gray-600 text-sm">Vous recevez les outputs dans vos outils</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Avantages -->
-<section class="py-24 bg-white">
+<section class="py-24 bg-retro-cream">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-3 gap-8">
       <div class="text-center">
-        <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
+        <div class="w-16 h-16 bg-retro-green/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <img src="{% static 'images/target-precision.png' %}" alt="Précision" class="w-12 h-12 rounded-lg object-cover">
         </div>
         <h3 class="text-xl font-semibold mb-2">Zéro erreur</h3>
-        <p class="text-gray-500">Les agents suivent vos règles à la lettre. Pas d'oubli, pas d'approximation.</p>
+        <p class="text-gray-600">Les agents suivent vos règles à la lettre. Pas d'oubli, pas d'approximation.</p>
       </div>
       <div class="text-center">
-        <div class="w-16 h-16 bg-sky-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
+        <div class="w-16 h-16 bg-retro-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <img src="{% static 'images/rocket-launch.png' %}" alt="Rapidité" class="w-12 h-12 rounded-lg object-cover">
         </div>
         <h3 class="text-xl font-semibold mb-2">24/7</h3>
-        <p class="text-gray-500">Les agents travaillent en continu. Nuit, week-end, jours fériés.</p>
+        <p class="text-gray-600">Les agents travaillent en continu. Nuit, week-end, jours fériés.</p>
       </div>
       <div class="text-center">
-        <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
+        <div class="w-16 h-16 bg-retro-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <img src="{% static 'images/chart-growth.png' %}" alt="ROI" class="w-12 h-12 rounded-lg object-cover">
         </div>
         <h3 class="text-xl font-semibold mb-2">ROI immédiat</h3>
-        <p class="text-gray-500">Pas d'abonnement SaaS. Vous payez le résultat, pas l'outil.</p>
+        <p class="text-gray-600">Pas d'abonnement SaaS. Vous payez le résultat, pas l'outil.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA Waitlist -->
-<section id="waitlist" class="py-24 hero-bg relative overflow-hidden">
+<section id="waitlist" class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="{% static 'images/sunrise.png' %}" alt="" class="w-full h-full object-cover opacity-70">
+  </div>
   <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
     <h2 class="font-display text-4xl md:text-5xl italic mb-6 text-gray-900">Prêt à automatiser ?</h2>
-    <p class="text-gray-600 mb-10 text-lg">
+    <p class="text-gray-700 mb-10 text-lg">
       Décrivez votre process. On vous montre comment l'automatiser.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:alexis@321founded.com?subject=Otomata - Expression de besoin" class="bg-gray-900 text-white px-10 py-4 rounded-lg font-medium text-lg hover:bg-gray-800 transition shadow-lg">
+      <a href="mailto:alexis@321founded.com?subject=Otomata - Expression de besoin" class="bg-retro-orange text-white px-10 py-4 rounded-lg font-medium text-lg hover:bg-retro-orange-dark transition shadow-lg">
         Exprimer mon besoin
       </a>
-      <a href="https://cal.com/alexis-321/30min" target="_blank" class="bg-white border border-gray-300 px-10 py-4 rounded-lg font-medium text-lg hover:bg-gray-50 transition">
+      <a href="https://cal.com/alexis-321/30min" target="_blank" class="bg-white border border-retro-blue px-10 py-4 rounded-lg font-medium text-lg text-retro-blue hover:bg-retro-blue hover:text-white transition">
         Prendre RDV
       </a>
     </div>
