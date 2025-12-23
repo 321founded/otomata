@@ -2,7 +2,11 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'landing.html')
+    return render(request, 'landing/home.html')
+
+
+def sdr_agent(request):
+    return render(request, 'landing/sdr.html')
 
 
 def slides_index(request):

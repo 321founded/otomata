@@ -1,0 +1,306 @@
+{% extends 'slides/_base.html' %}
+{% load static %}
+
+{% block title %}Otomata - Analyse Concurrentielle{% endblock %}
+
+{% block slides %}
+<section class="bg-yellow title-slide">
+    <h1>Concurrence</h1>
+    <p>Analyse du marché AI Sales & Data Enrichment</p>
+</section>
+
+<section class="bg-cream">
+    <h2 class="title-orange">Panorama du marché</h2>
+    <div class="columns">
+        <div>
+            <h3>AI SDR Platforms</h3>
+            <ul>
+                <li>11x ($350M valuation)</li>
+                <li>Artisan ($39M raised)</li>
+                <li>Regie.ai (#1 G2 2024)</li>
+                <li>Rox ($50M Sequoia)</li>
+                <li>AuraSell ($30M)</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Data Enrichment</h3>
+            <ul>
+                <li>Clay ($1.25B valuation)</li>
+                <li>Harmonic ($30M)</li>
+                <li>Apollo.io (leader)</li>
+                <li>Amplemarket</li>
+            </ul>
+        </div>
+        <div>
+            <h3>France / M&A</h3>
+            <ul>
+                <li>Forge (sourcing M&A)</li>
+                <li>Kaspr (contacts)</li>
+                <li>Pappers (légal)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="bg-sky">
+    <h2 class="title-blue">11x.ai</h2>
+    <div class="columns" style="align-items: flex-start;">
+        <div style="flex: 0 0 55%;">
+            <img src="{% static 'images/competitors/01-11x.png' %}" alt="11x" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div>
+            <div class="highlight-box">
+                <p style="margin: 0;"><strong>Funding:</strong> $50M Série B (a16z)</p>
+                <p style="margin: 8px 0 0;"><strong>Valuation:</strong> $350M</p>
+                <p style="margin: 8px 0 0;"><strong>ARR:</strong> ~$10M</p>
+            </div>
+            <h3>Produits</h3>
+            <ul>
+                <li><strong>Alice</strong> - Email & LinkedIn outreach</li>
+                <li><strong>Julian</strong> - Phone calls</li>
+            </ul>
+            <h3>Clients</h3>
+            <p>Leica, Checkr, Ouster, Rho</p>
+            <h3>Pricing</h3>
+            <p style="color: var(--accent-orange); font-weight: 600;">~$60K/an</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-orange">
+    <h2 class="title-orange">Artisan (Ava)</h2>
+    <div class="columns" style="align-items: flex-start;">
+        <div style="flex: 0 0 55%;">
+            <img src="{% static 'images/competitors/02-artisan.png' %}" alt="Artisan" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div>
+            <div class="highlight-box">
+                <p style="margin: 0;"><strong>Funding:</strong> $39.3M (Série A $25M)</p>
+                <p style="margin: 8px 0 0;"><strong>Database:</strong> 300M+ contacts</p>
+            </div>
+            <h3>Approche</h3>
+            <p>All-in-one : data + warmup + outreach</p>
+            <ul>
+                <li>AI BDR autonome</li>
+                <li>Personnalisation automatique</li>
+                <li>Intégration CRM native</li>
+            </ul>
+            <h3>Différenciation</h3>
+            <p>Très axé "remplacement humain"</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-cream">
+    <h2 class="title-blue">Regie.ai</h2>
+    <div class="columns" style="align-items: flex-start;">
+        <div style="flex: 0 0 55%;">
+            <img src="{% static 'images/competitors/03-regie.png' %}" alt="Regie" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div>
+            <div class="highlight-box">
+                <p style="margin: 0;"><strong>Position:</strong> #1 AI Sales Assistant G2 2024</p>
+                <p style="margin: 8px 0 0;"><strong>Pricing:</strong> $35K+/an</p>
+            </div>
+            <h3>Positionnement</h3>
+            <p>Remplace Outreach, SalesLoft</p>
+            <ul>
+                <li>Sales Engagement Platform</li>
+                <li>AI-powered sequences</li>
+                <li>Enterprise focus</li>
+            </ul>
+            <h3>Forces</h3>
+            <p>Intégrations profondes, adoption enterprise</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-sky">
+    <h2 class="title-blue">Rox.ai & AuraSell</h2>
+    <div class="competitor-grid">
+        <div class="competitor-card">
+            <img src="{% static 'images/competitors/04-rox.png' %}" alt="Rox">
+            <div class="info">
+                <h3>Rox.ai</h3>
+                <p class="funding">$50M (Sequoia, GV)</p>
+                <p>"Agent swarm pour AEs" - Multi-agent orchestration</p>
+            </div>
+        </div>
+        <div class="competitor-card">
+            <img src="{% static 'images/competitors/05-aurasell.png' %}" alt="AuraSell">
+            <div class="info">
+                <h3>AuraSell</h3>
+                <p class="funding">$30M raised</p>
+                <p>AI SDR Enterprise - Focus grandes entreprises</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-yellow">
+    <h2 class="title-orange">Clay</h2>
+    <div class="columns" style="align-items: flex-start;">
+        <div style="flex: 0 0 55%;">
+            <img src="{% static 'images/competitors/07-clay.png' %}" alt="Clay" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div>
+            <div class="highlight-box">
+                <p style="margin: 0;"><strong>Valuation:</strong> $1.25B (Série B $40M)</p>
+                <p style="margin: 8px 0 0;"><strong>Growth:</strong> 6x en 2024</p>
+            </div>
+            <h3>Produit</h3>
+            <ul>
+                <li>150+ data sources</li>
+                <li>Waterfall enrichment</li>
+                <li>1B+ Claygent runs</li>
+            </ul>
+            <h3>Clients</h3>
+            <p>OpenAI, Canva, Rippling</p>
+            <h3>Pricing</h3>
+            <p style="color: var(--accent-orange);">$500-3K/mois (usage-based)</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-cream">
+    <h2 class="title-blue">Harmonic.ai</h2>
+    <div class="columns" style="align-items: flex-start;">
+        <div style="flex: 0 0 55%;">
+            <img src="{% static 'images/competitors/06-harmonic.png' %}" alt="Harmonic" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div>
+            <div class="highlight-box">
+                <p style="margin: 0;"><strong>Funding:</strong> $30M raised</p>
+                <p style="margin: 8px 0 0;"><strong>Database:</strong> 20M+ companies, 150M+ profiles</p>
+            </div>
+            <h3>Focus</h3>
+            <p>VCs et startup ecosystem</p>
+            <ul>
+                <li>Données startups early-stage</li>
+                <li>Signaux d'investissement</li>
+                <li>Intelligence competitive</li>
+            </ul>
+            <h3>Clients</h3>
+            <p>a16z, Accel, Brex, Notion</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-orange">
+    <h2 class="title-orange">PhacetLabs & Amplemarket</h2>
+    <div class="competitor-grid">
+        <div class="competitor-card">
+            <img src="{% static 'images/competitors/08-phacetlabs.png' %}" alt="PhacetLabs">
+            <div class="info">
+                <h3>PhacetLabs</h3>
+                <p class="funding">Modèle inspirant</p>
+                <p>Plateforme + Services - Techno interne, délivrée via service</p>
+            </div>
+        </div>
+        <div class="competitor-card">
+            <img src="{% static 'images/competitors/10-amplemarket.png' %}" alt="Amplemarket">
+            <div class="info">
+                <h3>Amplemarket</h3>
+                <p class="funding">AI Sales Platform</p>
+                <p>Data + engagement + intelligence - All-in-one</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-sky">
+    <h2 class="title-blue">Forge (France)</h2>
+    <div class="columns" style="align-items: flex-start;">
+        <div style="flex: 0 0 55%;">
+            <img src="{% static 'images/competitors/09-forge.png' %}" alt="Forge" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div>
+            <div class="highlight-box">
+                <p style="margin: 0;"><strong>Focus:</strong> Sourcing M&A France</p>
+                <p style="margin: 8px 0 0;"><strong>Pricing:</strong> 120€/mois (premium)</p>
+            </div>
+            <h3>Cible</h3>
+            <ul>
+                <li>Cabinets M&A</li>
+                <li>Search Funds</li>
+                <li>Private Equity</li>
+            </ul>
+            <h3>Produit</h3>
+            <p>Données entreprises FR, filtres financiers, exports CRM</p>
+            <h3>Différence avec Otomata</h3>
+            <p>Outil SaaS vs Service clé-en-main</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-yellow">
+    <h2 class="title-orange">Positionnement Otomata</h2>
+    <table style="font-size: 0.5em;">
+        <tr>
+            <th>Concurrent</th>
+            <th>Focus</th>
+            <th>Pricing</th>
+            <th>Notre différence</th>
+        </tr>
+        <tr>
+            <td>11x, Artisan, Regie</td>
+            <td>AI SDR automation</td>
+            <td>$35-60K/an</td>
+            <td>On prépare les listes, pas l'outreach</td>
+        </tr>
+        <tr>
+            <td>Clay</td>
+            <td>Data enrichment DIY</td>
+            <td>Usage-based</td>
+            <td>Service clé-en-main, pas d'outil</td>
+        </tr>
+        <tr>
+            <td>Forge</td>
+            <td>Sourcing M&A France</td>
+            <td>120€/mois</td>
+            <td>B2B général, pas que M&A</td>
+        </tr>
+        <tr>
+            <td>Harmonic</td>
+            <td>Startup data</td>
+            <td>Enterprise</td>
+            <td>PME/ETI françaises, pas startups</td>
+        </tr>
+    </table>
+    <div class="highlight-box" style="margin-top: 20px; text-align: center;">
+        <h3 style="margin: 0;">Notre positionnement</h3>
+        <p style="margin: 10px 0 0;">Service de création de listes B2B qualifiées par agents IA.<br>
+        <strong>Pas d'outil à apprendre, pas d'abonnement. On livre des listes prêtes.</strong></p>
+    </div>
+</section>
+
+<section class="bg-cream">
+    <h2>Opportunités identifiées</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card">
+            <h3>🇫🇷 Gap France</h3>
+            <p>Peu de solutions data FR de qualité. Sources US dominent.</p>
+        </div>
+        <div class="card">
+            <h3>💰 Prix prohibitifs</h3>
+            <p>AI SDR $35-60K/an. PME exclues du marché.</p>
+        </div>
+        <div class="card">
+            <h3>🔧 Complexité</h3>
+            <p>Clay puissant mais courbe d'apprentissage. Besoin service.</p>
+        </div>
+        <div class="card">
+            <h3>📊 Critères spécifiques</h3>
+            <p>Données non-standard mal couvertes (âge dirigeants, etc.)</p>
+        </div>
+        <div class="card">
+            <h3>🤝 Service > Outil</h3>
+            <p>PME préfèrent payer résultat que s'équiper.</p>
+        </div>
+        <div class="card">
+            <h3>⚡ Agilité</h3>
+            <p>Petite structure = itération rapide vs gros players.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

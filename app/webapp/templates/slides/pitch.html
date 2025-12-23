@@ -1,0 +1,166 @@
+{% extends 'slides/_base.html' %}
+{% load static %}
+
+{% block title %}Otomata - Pitch{% endblock %}
+
+{% block slides %}
+<section class="bg-yellow title-slide">
+    <h1>Otomata</h1>
+    <p>Plateforme agentique pour l'acquisition B2B</p>
+</section>
+
+<section class="bg-cream">
+    <h2 class="title-orange">Le marché des AI Sales Agents</h2>
+    <p><strong>Grosse dynamique en 2025</strong> — Les levées s'enchaînent</p>
+    <table>
+        <tr><th>Player</th><th>Funding</th><th>Promesse</th></tr>
+        <tr><td>11x</td><td>$50M (a16z)</td><td>"Alice remplace vos SDRs"</td></tr>
+        <tr><td>Rox</td><td>$50M (Sequoia, GV)</td><td>"Agent swarm pour AEs"</td></tr>
+        <tr><td>Artisan</td><td>$39M</td><td>"Ava, votre BDR IA"</td></tr>
+        <tr><td>AuraSell</td><td>$30M</td><td>AI SDR enterprise</td></tr>
+    </table>
+    <p style="margin-top: 30px;"><em>Proxy du marché agent IA global : si ça marche pour la vente, ça marche partout.</em></p>
+</section>
+
+<section class="bg-orange">
+    <div class="columns" style="align-items: center;">
+        <div>
+            <h2 class="title-orange">Pourquoi ça ne marche pas (encore)</h2>
+            <div class="card" style="margin-bottom: 12px;">
+                <h3>🎭 Jack of all trades</h3>
+                <p>Les agents IA doivent tout faire : sourcing, enrichissement, rédaction, envoi, suivi...</p>
+                <p style="margin-top: 8px;"><strong>Mais n'excellent pas partout.</strong></p>
+            </div>
+            <div class="card">
+                <h3>🧱 Le Mur du CRM</h3>
+                <p>Confrontation inévitable avec la stack existante. Le SDR IA doit s'intégrer à Salesforce/HubSpot...</p>
+                <p style="margin-top: 8px;"><strong>Mais veut aussi le remplacer.</strong></p>
+            </div>
+        </div>
+        <div style="flex: 0 0 35%;">
+            <img src="{% static 'images/slide3-challenges.png' %}" alt="Challenges" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+    </div>
+</section>
+
+<section class="bg-sky">
+    <h2 class="title-blue">Le marché adjacent : Data Enrichment</h2>
+    <p><strong>Clay ($1.25B), Harmonic, Apollo</strong></p>
+    <div class="highlight-box" style="margin-top: 30px;">
+        <h3 style="margin-top: 0;">Réalité sur cibles non-standard :</h3>
+        <ul>
+            <li>Cabinets comptables FR → données incomplètes</li>
+            <li>PME industrielles → pas de coverage</li>
+            <li>Startups early-stage → approximatif</li>
+        </ul>
+        <p style="margin-top: 20px;"><strong>En fait :</strong> overlay IA sur Apollo.io / Crunchbase. Sources identiques.</p>
+    </div>
+</section>
+
+<section class="bg-orange">
+    <h2 class="title-orange">Le problème du coût</h2>
+    <div class="card-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="card" style="text-align: center;">
+            <h3 style="font-size: 16px !important;">11x</h3>
+            <p style="color: var(--accent-orange); font-weight: 700;">~$60K/an</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h3 style="font-size: 16px !important;">Regie.ai</h3>
+            <p style="color: var(--accent-orange); font-weight: 700;">$35K+/an</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h3 style="font-size: 16px !important;">Clay</h3>
+            <p style="color: var(--accent-orange); font-weight: 700;">$500-3K/mois</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <h3 style="font-size: 16px !important;">AiSDR</h3>
+            <p style="color: var(--accent-orange); font-weight: 700;">$900-2.5K/mois</p>
+        </div>
+    </div>
+    <ul style="margin-top: 30px;">
+        <li>ROI difficile à prouver pour une PME</li>
+        <li>Coût marginal élevé (tokens, API, compute)</li>
+        <li>Pricing souvent opaque</li>
+    </ul>
+</section>
+
+<section class="bg-cream">
+    <h2 class="title-blue">Inspiration : PhacetLabs</h2>
+    <p><strong>Modèle Plateforme + Services</strong></p>
+    <div class="card-grid">
+        <div class="card"><h3>🔧 Techno propriétaire</h3><p>Utilisée en interne, pas vendue directement</p></div>
+        <div class="card"><h3>🤝 Délivrée via service</h3><p>Le client paie le résultat, pas la techno</p></div>
+        <div class="card"><h3>📈 Scalabilité</h3><p>Via l'outil, pas les consultants</p></div>
+        <div class="card"><h3>💰 Valeur partagée</h3><p>Gain de temps = marge pour les deux</p></div>
+    </div>
+</section>
+
+<section class="bg-yellow">
+    <div class="columns" style="align-items: center;">
+        <div style="flex: 0 0 30%;">
+            <img src="{% static 'images/slide7-opportunite.png' %}" alt="Opportunité" style="width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        <div>
+            <h2 class="title-orange">L'opportunité Otomata</h2>
+            <p><strong>Besoin mal couvert par le marché</strong></p>
+            <div class="card-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 16px;">
+                <div class="card"><h3>1. Listings</h3><p>Identifier les cibles sur critères spécifiques.</p></div>
+                <div class="card"><h3>2. Enrichissement</h3><p>Sources FR/EU et données non-standard.</p></div>
+                <div class="card"><h3>3. Mapping</h3><p>Qualifier, scorer et prioriser.</p></div>
+            </div>
+            <p style="margin-top: 16px;"><strong>Personne ne fait bien la <span style="color: var(--accent-orange);">préparation</span> de l'outbound.</strong></p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-sky">
+    <h2 class="title-blue">Notre approche : Plateforme Agentique</h2>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin: 20px 0; font-size: 0.6em;">
+        <div class="card" style="padding: 12px 18px;"><strong>Outils</strong><br><small>Scrapers, enrichisseurs</small></div>
+        <span style="font-size: 1.4em; color: var(--accent-orange);">+</span>
+        <div class="card" style="padding: 12px 18px;"><strong>Instructions</strong><br><small>Workflows, prompts</small></div>
+        <span style="font-size: 1.4em; color: var(--accent-orange);">→</span>
+        <div class="card" style="padding: 12px 18px;"><strong>Agents</strong><br><small>Exécution autonome</small></div>
+        <span style="font-size: 1.4em; color: var(--accent-orange);">→</span>
+        <div class="card" style="padding: 12px 18px; background: linear-gradient(135deg, var(--warm-yellow), var(--warm-orange));"><strong>Résultats</strong></div>
+    </div>
+    <p style="text-align: center;"><em>On l'utilise nous-mêmes. On itère. On améliore.</em></p>
+    <div style="margin-top: 20px; text-align: center;">
+        <img src="{% static 'images/slide8-workflow.png' %}" alt="Workflow" style="max-width: 300px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    </div>
+</section>
+
+<section class="bg-cream">
+    <h2 class="title-orange">Le modèle économique</h2>
+    <div class="columns">
+        <div>
+            <h3>La techno est offerte</h3>
+            <p>(ou difficile à pricer isolément)</p>
+            <h3 style="margin-top: 30px;">On vend du temps (TJM haut)</h3>
+        </div>
+        <div class="highlight-box">
+            <h3 style="margin-top: 0;">Le Deal : Gain de temps partagé</h3>
+            <ul>
+                <li><strong>Client :</strong> Plus rapide + meilleure qualité</li>
+                <li><strong>Nous :</strong> Plus rapide à délivrer → Marge</li>
+            </ul>
+            <p style="margin-top: 20px; font-size: 1.1em;"><strong>Résultat :</strong> Compétitif en prix, supérieur en output.</p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-yellow">
+    <h2 class="title-blue">Prochaines étapes</h2>
+    <div class="card-grid">
+        <div class="card"><h3>1. POC Interne</h3><p>Utiliser Otomata sur 2-3 use cases réels</p></div>
+        <div class="card"><h3>2. Packaging</h3><p>Définir les livrables types</p></div>
+        <div class="card"><h3>3. Pricing</h3><p>TJM + success fee ?</p></div>
+        <div class="card"><h3>4. Go-to-market</h3><p>Cibler PME/ETI avec besoins data FR</p></div>
+    </div>
+</section>
+
+<section class="bg-cream">
+    <h2>Questions ?</h2>
+    <p style="font-size: 1.2em; margin-top: 40px;">alexis@321founded.com</p>
+</section>
+{% endblock %}

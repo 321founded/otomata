@@ -1,0 +1,475 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Otomata - Deck{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+    <style>
+        :root {
+            --warm-yellow: #FEF9E7;
+            --warm-orange: #FDF2E9;
+            --warm-sky: #EBF5FB;
+            --warm-cream: #FDFEFE;
+            --accent-orange: #E67E22;
+            --accent-blue: #3498DB;
+            --text-dark: #2C3E50;
+            --sidebar-width: 180px;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Main layout */
+        .deck-layout {
+            display: flex;
+            height: 100vh;
+            padding-top: 45px;
+        }
+
+        /* Sidebar */
+        .slides-sidebar {
+            width: var(--sidebar-width);
+            background: #fafafa;
+            border-right: 1px solid #eee;
+            overflow-y: auto;
+            padding: 12px 8px;
+            flex-shrink: 0;
+        }
+
+        .slides-sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .slides-sidebar::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 2px;
+        }
+
+        .slide-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 12px;
+            margin-bottom: 2px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .slide-item:hover {
+            background: #eee;
+        }
+
+        .slide-item.active {
+            background: #fff3e0;
+        }
+
+        .slide-item-number {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            background: #e0e0e0;
+            color: #666;
+            font-size: 11px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-item.active .slide-item-number {
+            background: var(--accent-orange);
+            color: white;
+        }
+
+        .slide-item-title {
+            color: #333;
+            font-weight: 500;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .slide-item.active .slide-item-title {
+            color: #c45000;
+        }
+
+        /* Slides container */
+        .slides-main {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Deck navigation */
+        .deck-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #eee;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-size: 13px;
+        }
+
+        .deck-nav a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .deck-nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        .deck-nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .deck-nav .logo-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b, #ea580c);
+        }
+
+        .deck-nav .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .deck-nav .nav-links .current {
+            color: var(--accent-orange);
+            font-weight: 500;
+        }
+
+        .deck-nav .deck-switch {
+            display: flex;
+            gap: 8px;
+        }
+
+        .deck-nav .deck-switch a {
+            padding: 4px 12px;
+            border-radius: 6px;
+            background: #f5f5f5;
+        }
+
+        .deck-nav .deck-switch a:hover {
+            background: #eee;
+        }
+
+        .reveal {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-weight: 700;
+            text-transform: none;
+            letter-spacing: -0.02em;
+        }
+
+        .reveal h1 { font-size: 72px !important; }
+        .reveal h2 { font-size: 42px !important; margin-bottom: 16px; }
+        .reveal h3 { font-size: 24px !important; }
+
+        .reveal p, .reveal li {
+            font-size: 20px !important;
+            line-height: 1.5;
+            color: var(--text-dark);
+        }
+
+        .reveal .slides section {
+            padding: 20px 40px;
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .reveal .slides section > * {
+            width: 100%;
+        }
+
+        .bg-yellow { background: var(--warm-yellow) !important; }
+        .bg-orange { background: var(--warm-orange) !important; }
+        .bg-sky { background: var(--warm-sky) !important; }
+        .bg-cream { background: var(--warm-cream) !important; }
+
+        .title-orange { color: var(--accent-orange) !important; }
+        .title-blue { color: var(--accent-blue) !important; }
+
+        .title-slide h1 {
+            font-size: 4em;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title-slide p {
+            font-size: 1.5em;
+            color: var(--text-dark);
+            opacity: 0.8;
+        }
+
+        .reveal table {
+            margin: 15px auto;
+            border-collapse: collapse;
+            font-size: 0.55em;
+        }
+
+        .reveal table th {
+            background: var(--accent-orange);
+            color: white;
+            padding: 8px 16px;
+            text-align: left;
+        }
+
+        .reveal table td {
+            padding: 6px 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .reveal table tr:nth-child(even) {
+            background: rgba(0,0,0,0.02);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            text-align: left;
+        }
+
+        .card h3 {
+            margin: 0 0 8px 0;
+            font-size: 22px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .reveal ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .reveal ul li {
+            position: relative;
+            padding-left: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .reveal ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+        }
+
+        .columns {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .columns > div {
+            flex: 1;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--warm-yellow), var(--warm-orange));
+            border-radius: 10px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+
+        .competitor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .competitor-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .competitor-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .competitor-card .info {
+            padding: 12px 16px;
+        }
+
+        .competitor-card h3 {
+            margin: 0 0 4px 0;
+            font-size: 18px !important;
+        }
+
+        .competitor-card p {
+            margin: 0;
+            font-size: 13px !important;
+            color: #666;
+        }
+
+        .competitor-card .funding {
+            font-size: 12px !important;
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        /* Preview mode (for iframes) */
+        body.preview-mode .deck-nav,
+        body.preview-mode .slides-sidebar {
+            display: none !important;
+        }
+
+        body.preview-mode .deck-layout {
+            padding-top: 0;
+        }
+
+        body.preview-mode .reveal .controls,
+        body.preview-mode .reveal .progress {
+            display: none !important;
+        }
+
+        {% block extra_styles %}{% endblock %}
+    </style>
+</head>
+<body>
+    <script>
+        if (window.location.search.includes('preview=1')) {
+            document.body.classList.add('preview-mode');
+        }
+    </script>
+    <nav class="deck-nav">
+        <a href="{% url 'slides_index' %}" class="logo">
+            <div class="logo-icon"></div>
+            <span>Decks</span>
+        </a>
+        <div class="nav-links">
+            <a href="{% url 'slides_deck' 'pitch' %}" {% if deck_name == 'pitch' %}class="current"{% endif %}>Pitch</a>
+            <a href="{% url 'slides_deck' 'competition' %}" {% if deck_name == 'competition' %}class="current"{% endif %}>Concurrence</a>
+        </div>
+        <div class="deck-switch">
+            {% if prev_deck %}<a href="{% url 'slides_deck' prev_deck %}">← Préc</a>{% endif %}
+            {% if next_deck %}<a href="{% url 'slides_deck' next_deck %}">Suiv →</a>{% endif %}
+        </div>
+    </nav>
+
+    <div class="deck-layout">
+        <aside class="slides-sidebar" id="slidesSidebar"></aside>
+
+        <main class="slides-main">
+            <div class="reveal">
+                <div class="slides">
+                    {% block slides %}{% endblock %}
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            width: 1280,
+            height: 720,
+            margin: 0.04,
+            minScale: 0.5,
+            maxScale: 2.0
+        });
+
+        // Build sidebar with slide titles
+        (function() {
+            const sidebar = document.getElementById('slidesSidebar');
+            const slides = document.querySelectorAll('.reveal .slides > section');
+
+            slides.forEach((slide, index) => {
+                const item = document.createElement('div');
+                item.className = 'slide-item' + (index === 0 ? ' active' : '');
+                item.dataset.index = index;
+
+                // Get title from h1 or h2
+                const heading = slide.querySelector('h1, h2');
+                const title = heading ? heading.textContent.trim() : `Slide ${index + 1}`;
+
+                item.innerHTML = `
+                    <span class="slide-item-number">${index + 1}</span>
+                    <span class="slide-item-title">${title}</span>
+                `;
+
+                sidebar.appendChild(item);
+
+                // Click to navigate
+                item.addEventListener('click', () => {
+                    Reveal.slide(index);
+                });
+            });
+
+            // Sync on slide change
+            Reveal.on('slidechanged', event => {
+                document.querySelectorAll('.slide-item').forEach((item, i) => {
+                    item.classList.toggle('active', i === event.indexh);
+                });
+                // Scroll active into view
+                const active = sidebar.querySelector('.slide-item.active');
+                if (active) {
+                    active.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
