@@ -1,0 +1,22 @@
+name: Deploy to Scaleway
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: 51.15.237.14
+          username: root
+          key: ${{ secrets.SCALEWAY_SSH_KEY }}
+          script: |
+            cd /otomata
+            git fetch origin
+            git reset --hard origin/main
+            ./app/venv/bin/pip install -q -r app/requirements.txt
+            # Hot reload - no restart needed
+            echo "Deployed successfully"

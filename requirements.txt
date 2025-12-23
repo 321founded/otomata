@@ -1,4 +1,0 @@
-Django==4.2.25
-psycopg2-binary==2.9.10
-whitenoise==6.8.2
-python-dotenv==1.0.0
