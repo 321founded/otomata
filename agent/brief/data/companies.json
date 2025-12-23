@@ -1,0 +1,544 @@
+{
+  "metadata": {
+    "project": "otomata",
+    "source": "otomata-market-analysis",
+    "created": "2025-12-22",
+    "segments": ["ai-sdr", "data-enrichment", "process-automation", "b2b-platforms", "ai-agents"]
+  },
+  "companies": [
+    {
+      "legal_name": "11x.ai",
+      "commercial_name": "11x",
+      "domain": "11x.ai",
+      "website": "https://www.11x.ai",
+      "geography": "USA",
+      "revenue": "~$10M ARR",
+      "overview": "AI SDR platform with Alice (email/LinkedIn) and Julian (phone) agents. a16z-backed at $350M valuation.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "leader",
+        "funding": "$50M Series B",
+        "valuation": "$350M",
+        "investors": "a16z"
+      }
+    },
+    {
+      "legal_name": "Artisan AI",
+      "commercial_name": "Artisan",
+      "domain": "artisan.co",
+      "website": "https://www.artisan.co",
+      "geography": "USA",
+      "overview": "AI BDR platform with Ava agent. All-in-one approach with 300M+ contacts database.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "leader",
+        "funding": "$39.3M Series A"
+      }
+    },
+    {
+      "legal_name": "Regie.ai Inc",
+      "commercial_name": "Regie.ai",
+      "domain": "regie.ai",
+      "website": "https://www.regie.ai",
+      "geography": "USA",
+      "overview": "AI Sales Engagement Platform. Replaces Outreach/SalesLoft with AI-native approach.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "leader",
+        "pricing": "$35K+/year",
+        "recognition": "#1 AI Sales Assistant G2 2024"
+      }
+    },
+    {
+      "legal_name": "Qualified.com",
+      "commercial_name": "Qualified",
+      "domain": "qualified.com",
+      "website": "https://www.qualified.com",
+      "geography": "USA",
+      "overview": "Inbound AI SDR with Piper agent for website visitors. Converts traffic to pipeline.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "leader",
+        "focus": "inbound"
+      }
+    },
+    {
+      "legal_name": "Conversica Inc",
+      "commercial_name": "Conversica",
+      "domain": "conversica.com",
+      "website": "https://www.conversica.com",
+      "geography": "USA",
+      "overview": "Pioneer AI SDR (founded 2007). Revenue Digital Assistants with 1.5B conversations.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "leader",
+        "founded": "2007"
+      }
+    },
+    {
+      "legal_name": "AiSDR",
+      "commercial_name": "AiSDR",
+      "domain": "aisdr.com",
+      "website": "https://aisdr.com",
+      "geography": "USA",
+      "overview": "Budget-friendly AI SDR with transparent pricing ($900-$2,500/month). 323+ data sources.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "challenger",
+        "pricing": "$900-$2500/month"
+      }
+    },
+    {
+      "legal_name": "Persana AI",
+      "commercial_name": "Persana",
+      "domain": "persana.ai",
+      "website": "https://persana.ai",
+      "geography": "USA",
+      "overview": "YC-backed AI SDR combining Clay-like enrichment with outreach. 10K+ teams.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "challenger",
+        "investors": "Y Combinator"
+      }
+    },
+    {
+      "legal_name": "Rox Inc",
+      "commercial_name": "Rox",
+      "domain": "rox.com",
+      "website": "https://www.rox.com",
+      "geography": "USA",
+      "overview": "AI agent swarm for sales. $50M from Sequoia/GV. Clients: OpenAI, Ramp, MongoDB.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "rising-star",
+        "funding": "$50M",
+        "valuation": "undisclosed",
+        "investors": "Sequoia, GV, General Catalyst"
+      }
+    },
+    {
+      "legal_name": "FuseAI Inc",
+      "commercial_name": "FuseAI",
+      "domain": "tryfuse.ai",
+      "website": "https://tryfuse.ai",
+      "geography": "USA",
+      "revenue": "$660K",
+      "employees": "6",
+      "overview": "YC W25 agentic OS for outbound. 700M+ contacts, $660K revenue with 6 person team.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "rising-star",
+        "funding": "$500K",
+        "investors": "Y Combinator"
+      }
+    },
+    {
+      "legal_name": "Lyzr AI",
+      "commercial_name": "Lyzr",
+      "domain": "lyzr.ai",
+      "website": "https://www.lyzr.ai",
+      "geography": "USA",
+      "revenue": "$1.5M ARR",
+      "overview": "Jazon 2.0 - downloadable AI SDR. Partnerships with AWS, Google, IBM, NVIDIA.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "rising-star",
+        "recognition": "Accenture Ventures 2024 winner"
+      }
+    },
+    {
+      "legal_name": "Luru Inc",
+      "commercial_name": "Luru",
+      "domain": "luru.app",
+      "website": "https://www.luru.app",
+      "geography": "USA",
+      "employees": "5",
+      "overview": "Human-in-the-loop AI SDR for CRM efficiency. Specialized agents per stage.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "rising-star",
+        "funding": "$1.4M"
+      }
+    },
+    {
+      "legal_name": "Pinkfish AI",
+      "commercial_name": "Pinkfish",
+      "domain": "pinkfish.ai",
+      "website": "https://www.pinkfish.ai",
+      "geography": "USA",
+      "overview": "Generative automation platform from ex-Talkdesk team. Self-healing automations.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "rising-star",
+        "funding": "$7.6M Pre-Seed",
+        "investors": "Norwest Venture Partners"
+      }
+    },
+    {
+      "legal_name": "Truffle AI",
+      "commercial_name": "Truffle AI",
+      "domain": "trytruffle.ai",
+      "website": "https://www.trytruffle.ai",
+      "geography": "USA",
+      "employees": "2",
+      "overview": "YC W25 - APIs for integrating AI agents into applications. Infrastructure layer.",
+      "tags": {
+        "segment": "ai-agents",
+        "tier": "rising-star",
+        "funding": "$500K",
+        "investors": "Y Combinator"
+      }
+    },
+    {
+      "legal_name": "Call Me Newton",
+      "commercial_name": "Call Me Newton",
+      "domain": "callmenewton.fr",
+      "website": "https://www.callmenewton.fr",
+      "geography": "France",
+      "overview": "French AI SDR for PME/ETI. BPI France backed. Clients: BMW, Thirard, Starwax.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "rising-star",
+        "region": "france",
+        "investors": "BPI France"
+      }
+    },
+    {
+      "legal_name": "Clay Inc",
+      "commercial_name": "Clay",
+      "domain": "clay.com",
+      "website": "https://www.clay.com",
+      "geography": "USA",
+      "overview": "Data enrichment with waterfall approach. 150+ sources, Claygent AI. 6x growth 2024.",
+      "tags": {
+        "segment": "data-enrichment",
+        "tier": "leader",
+        "valuation": "$1.25B",
+        "funding": "$40M Series B"
+      }
+    },
+    {
+      "legal_name": "Apollo.io",
+      "commercial_name": "Apollo",
+      "domain": "apollo.io",
+      "website": "https://www.apollo.io",
+      "geography": "USA",
+      "overview": "All-in-one sales platform. 280M contacts database. Freemium pricing.",
+      "tags": {
+        "segment": "data-enrichment",
+        "tier": "leader",
+        "pricing": "$49-79/month"
+      }
+    },
+    {
+      "legal_name": "Harmonic.ai",
+      "commercial_name": "Harmonic",
+      "domain": "harmonic.ai",
+      "website": "https://harmonic.ai",
+      "geography": "USA",
+      "overview": "Bloomberg Terminal for startups. 20M+ companies. Focus VCs/startup ecosystem.",
+      "tags": {
+        "segment": "data-enrichment",
+        "tier": "challenger",
+        "funding": "$30M"
+      }
+    },
+    {
+      "legal_name": "Cognism Ltd",
+      "commercial_name": "Cognism",
+      "domain": "cognism.com",
+      "website": "https://www.cognism.com",
+      "geography": "UK",
+      "revenue": "$83M",
+      "employees": "559",
+      "overview": "EMEA leader B2B data. GDPR-first. Diamond Data verification. Acquired Kaspr.",
+      "tags": {
+        "segment": "data-enrichment",
+        "tier": "leader",
+        "valuation": "$436M",
+        "funding": "$129M",
+        "region": "europe"
+      }
+    },
+    {
+      "legal_name": "Zapier Inc",
+      "commercial_name": "Zapier",
+      "domain": "zapier.com",
+      "website": "https://www.zapier.com",
+      "geography": "USA",
+      "revenue": "$310M",
+      "overview": "Market leader workflow automation. 8,000+ apps. Profitable since 2014.",
+      "tags": {
+        "segment": "process-automation",
+        "tier": "leader",
+        "valuation": "$5B"
+      }
+    },
+    {
+      "legal_name": "n8n GmbH",
+      "commercial_name": "n8n",
+      "domain": "n8n.io",
+      "website": "https://n8n.io",
+      "geography": "Germany",
+      "revenue": "$40M ARR",
+      "overview": "Fair-code automation platform. AI-native with 70 LangChain nodes. Self-hostable.",
+      "tags": {
+        "segment": "process-automation",
+        "tier": "leader",
+        "valuation": "$2.5B",
+        "funding": "$253M",
+        "region": "europe"
+      }
+    },
+    {
+      "legal_name": "Make (Celonis)",
+      "commercial_name": "Make",
+      "domain": "make.com",
+      "website": "https://www.make.com",
+      "geography": "Czech Republic",
+      "revenue": "~$24M",
+      "overview": "Visual workflow builder. Acquired by Celonis for $110M. Bootstrapped.",
+      "tags": {
+        "segment": "process-automation",
+        "tier": "leader",
+        "region": "europe"
+      }
+    },
+    {
+      "legal_name": "Relevance AI",
+      "commercial_name": "Relevance AI",
+      "domain": "relevance.ai",
+      "website": "https://relevance.ai",
+      "geography": "Australia",
+      "overview": "Multi-agent no-code platform. 40K agents created in Jan 2025 alone.",
+      "tags": {
+        "segment": "process-automation",
+        "tier": "challenger",
+        "funding": "$37M Series B",
+        "investors": "Bessemer Venture Partners"
+      }
+    },
+    {
+      "legal_name": "Lindy AI",
+      "commercial_name": "Lindy",
+      "domain": "lindy.ai",
+      "website": "https://www.lindy.ai",
+      "geography": "USA",
+      "revenue": "$5.1M",
+      "overview": "AI employee platform. 5,000+ integrations. Pivot from Teamflow ($50M raised).",
+      "tags": {
+        "segment": "process-automation",
+        "tier": "challenger",
+        "funding": "$50M Series B"
+      }
+    },
+    {
+      "legal_name": "Bardeen AI",
+      "commercial_name": "Bardeen",
+      "domain": "bardeen.ai",
+      "website": "https://www.bardeen.ai",
+      "geography": "USA",
+      "overview": "Browser-based automation. 300K+ users. Scraping + automation combined.",
+      "tags": {
+        "segment": "process-automation",
+        "tier": "challenger",
+        "funding": "$21.8M"
+      }
+    },
+    {
+      "legal_name": "Writer Inc",
+      "commercial_name": "Writer",
+      "domain": "writer.com",
+      "website": "https://writer.com",
+      "geography": "USA",
+      "overview": "Enterprise AI content platform. Fortune 500 clients. 9x ROI reported.",
+      "tags": {
+        "segment": "b2b-platforms",
+        "tier": "leader",
+        "valuation": "$1.9B",
+        "funding": "$326M"
+      }
+    },
+    {
+      "legal_name": "Jasper AI",
+      "commercial_name": "Jasper",
+      "domain": "jasper.ai",
+      "website": "https://www.jasper.ai",
+      "geography": "USA",
+      "revenue": "$55M (2024, down from $120M)",
+      "overview": "AI content generation. Struggling with ChatGPT competition. New CEO ex-Dropbox.",
+      "tags": {
+        "segment": "b2b-platforms",
+        "tier": "declining",
+        "valuation": "$1.2B (down from $1.5B)",
+        "funding": "$131M"
+      }
+    },
+    {
+      "legal_name": "Copy.ai Inc",
+      "commercial_name": "Copy.ai",
+      "domain": "copy.ai",
+      "website": "https://www.copy.ai",
+      "geography": "USA",
+      "revenue": "$23.7M",
+      "overview": "GTM AI platform. +480% growth 2024. Multi-model (85+ LLMs).",
+      "tags": {
+        "segment": "b2b-platforms",
+        "tier": "challenger",
+        "funding": "$17-24M"
+      }
+    },
+    {
+      "legal_name": "LangChain Inc",
+      "commercial_name": "LangChain",
+      "domain": "langchain.com",
+      "website": "https://www.langchain.com",
+      "geography": "USA",
+      "overview": "Standard AI agent framework. LangGraph + LangSmith. 80K+ GitHub stars.",
+      "tags": {
+        "segment": "ai-agents",
+        "tier": "leader",
+        "valuation": "$1.25B",
+        "funding": "$260M"
+      }
+    },
+    {
+      "legal_name": "Mistral AI",
+      "commercial_name": "Mistral AI",
+      "domain": "mistral.ai",
+      "website": "https://mistral.ai",
+      "geography": "France",
+      "revenue": ">€300M contracts",
+      "overview": "European LLM champion. Open-weight models. Clients: Stellantis, French MoD.",
+      "tags": {
+        "segment": "ai-agents",
+        "tier": "leader",
+        "valuation": "€11.7B",
+        "funding": "€1.7B",
+        "region": "france"
+      }
+    },
+    {
+      "legal_name": "lemlist SAS",
+      "commercial_name": "lemlist",
+      "domain": "lemlist.com",
+      "website": "https://www.lemlist.com",
+      "geography": "France",
+      "revenue": "$40M ARR",
+      "employees": "90+",
+      "overview": "French bootstrapped success. Sales engagement platform. Acquired Claap 2025.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "leader",
+        "valuation": "€128M",
+        "region": "france",
+        "bootstrapped": true
+      }
+    },
+    {
+      "legal_name": "Pennylane SAS",
+      "commercial_name": "Pennylane",
+      "domain": "pennylane.com",
+      "website": "https://www.pennylane.com",
+      "geography": "France",
+      "revenue": "~€100M ARR (projection)",
+      "overview": "French fintech unicorn. AI copilot for accountants. 350K+ SMBs.",
+      "tags": {
+        "segment": "b2b-platforms",
+        "tier": "leader",
+        "valuation": "€2B",
+        "funding": "€75M Series C",
+        "region": "france"
+      }
+    },
+    {
+      "legal_name": "Dust SAS",
+      "commercial_name": "Dust",
+      "domain": "dust.tt",
+      "website": "https://dust.tt",
+      "geography": "France",
+      "overview": "Enterprise AI assistants from ex-OpenAI founder. Multi-LLM approach.",
+      "tags": {
+        "segment": "ai-agents",
+        "tier": "challenger",
+        "funding": "$21.5M Series A",
+        "investors": "Sequoia",
+        "region": "france"
+      }
+    },
+    {
+      "legal_name": "Kaspr (Cognism)",
+      "commercial_name": "Kaspr",
+      "domain": "kaspr.io",
+      "website": "https://www.kaspr.io",
+      "geography": "France",
+      "revenue": "$8M ARR",
+      "overview": "French LinkedIn enrichment. Acquired by Cognism for €21M. 500M+ contacts.",
+      "tags": {
+        "segment": "data-enrichment",
+        "tier": "acquired",
+        "region": "france",
+        "acquirer": "Cognism"
+      }
+    },
+    {
+      "legal_name": "Waalaxy (Waapi SAS)",
+      "commercial_name": "Waalaxy",
+      "domain": "waalaxy.com",
+      "website": "https://www.waalaxy.com",
+      "geography": "France",
+      "revenue": "$2M",
+      "employees": "60",
+      "overview": "French bootstrapped LinkedIn automation. 150K+ users. Ex-ProspectIn.",
+      "tags": {
+        "segment": "ai-sdr",
+        "tier": "challenger",
+        "region": "france",
+        "bootstrapped": true
+      }
+    },
+    {
+      "legal_name": "Dropcontact",
+      "commercial_name": "Dropcontact",
+      "domain": "dropcontact.com",
+      "website": "https://www.dropcontact.com",
+      "geography": "France",
+      "overview": "GDPR-native B2B enrichment. No database - real-time generation.",
+      "tags": {
+        "segment": "data-enrichment",
+        "tier": "challenger",
+        "region": "france"
+      }
+    },
+    {
+      "legal_name": "Surfe (Waapi SAS)",
+      "commercial_name": "Surfe",
+      "domain": "surfe.com",
+      "website": "https://www.surfe.com",
+      "geography": "France",
+      "revenue": "€1M+ ARR",
+      "overview": "LinkedIn-CRM sync. 40K+ users. Clients: Google, Uber, Spendesk.",
+      "tags": {
+        "segment": "data-enrichment",
+        "tier": "challenger",
+        "funding": "€4M Seed",
+        "region": "france"
+      }
+    },
+    {
+      "legal_name": "Parloa GmbH",
+      "commercial_name": "Parloa",
+      "domain": "parloa.com",
+      "website": "https://www.parloa.com",
+      "geography": "Germany",
+      "overview": "Berlin conversational AI unicorn. NLU + generative AI for contact centers.",
+      "tags": {
+        "segment": "ai-agents",
+        "tier": "leader",
+        "valuation": "$1B",
+        "funding": "$120M Series C",
+        "region": "europe"
+      }
+    }
+  ]
+}

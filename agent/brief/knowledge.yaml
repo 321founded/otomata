@@ -1,0 +1,361 @@
+knowledge:
+  # AI SDR Sources
+  - ref: 11x_website
+    source: https://www.11x.ai
+    date: 2025-12-22
+    knowledge: |
+      11x AI SDR platform. Products: Alice (email/LinkedIn), Julian (phone).
+      $350M valuation, Série B $50M led by a16z. ARR ~$10M.
+      Clients: Leica, Checkr, Ouster, Rho.
+
+  - ref: artisan_website
+    source: https://www.artisan.co
+    date: 2025-12-22
+    knowledge: |
+      Artisan AI BDR platform. Main product: Ava.
+      $39.3M funding (Série A $25M). 300M+ contacts database.
+      All-in-one approach: data + warmup + outreach.
+
+  - ref: regie_website
+    source: https://www.regie.ai
+    date: 2025-12-22
+    knowledge: |
+      Regie.ai AI Sales Engagement Platform.
+      Pricing: $35K+/an. #1 AI Sales Assistant G2 2024.
+      Replaces traditional SEPs (Outreach, SalesLoft).
+
+  - ref: aisdr_website
+    source: https://aisdr.com
+    date: 2025-12-22
+    knowledge: |
+      AiSDR full autopilot solution.
+      Pricing: $900-$2,500/mois, month-to-month.
+      323+ data sources, 68% open rate, 7 LLMs.
+
+  - ref: qualified_website
+    source: https://www.qualified.com/ai-sdr
+    date: 2025-12-22
+    knowledge: |
+      Qualified Piper - inbound AI SDR for website visitors.
+      Products: Piper, PiperX, Piper Meetings.
+      Clients: VMware, Sodexo, Grubhub. 100X ROI reported.
+
+  - ref: techcrunch_ai_sdr
+    source: https://techcrunch.com/2024/12/26/ai-sdr-startups-are-booming-so-why-are-vcs-wary/
+    date: 2024-12-26
+    knowledge: |
+      AI SDR market analysis. VCs wary of commoditization.
+      5-10 startups achieving simultaneous success.
+      Concerns about sustainable differentiation.
+
+  # Data Enrichment Sources
+  - ref: clay_contrary
+    source: https://research.contrary.com/company/clay
+    date: 2025-12-22
+    knowledge: |
+      Clay data enrichment platform.
+      $1.25B valuation (Série B, $40M). 6x growth in 2024.
+      150+ data sources, waterfall approach. 1B+ Claygent runs.
+      Clients: OpenAI, Canva, Rippling.
+
+  - ref: harmonic_website
+    source: https://harmonic.ai
+    date: 2025-12-22
+    knowledge: |
+      Harmonic.ai startup data platform.
+      $30M raised. 20M+ companies, 150M+ profiles.
+      Focus: VCs and startup ecosystem.
+      Clients: a16z, Accel, Brex, Notion.
+
+  # Process Automation Sources
+  - ref: n8n_techcrunch_b
+    source: https://techcrunch.com/2025/03/24/fair-code-pioneer-n8n-raises-60m-for-ai-powered-workflow-automation/
+    date: 2025-03-24
+    knowledge: |
+      n8n raises €55M ($60M) at ~$270M valuation.
+      Led by Highland Europe. Existing: Sequoia, Felicis, HV Capital.
+
+  - ref: n8n_techfunding_c
+    source: https://techfundingnews.com/n8n-raises-180m-series-c-2-5-billion-valuation-automation-ai/
+    date: 2025-10-01
+    knowledge: |
+      n8n $180M Series C at $2.5B valuation.
+      Led by Accel, with NVentures (Nvidia).
+      3,000+ enterprise customers. $40M ARR.
+
+  - ref: zapier_sacra
+    source: https://sacra.com/c/zapier/
+    date: 2025-12-22
+    knowledge: |
+      Zapier $5B valuation (2021). $310M revenue (2024).
+      Bootstrapped to $100M ARR on $1.4M funding.
+      100K+ paying customers, 8,000+ apps. Profitable since 2014.
+
+  - ref: relevance_techcrunch
+    source: https://techcrunch.com/2025/05/06/relevance-ai-raises-24m-series-b-to-help-anyone-build-teams-of-ai-agents/
+    date: 2025-05-06
+    knowledge: |
+      Relevance AI $24M Series B led by Bessemer.
+      Total: $37M raised. Sydney-based.
+      40,000 AI agents registered in Jan 2025 alone.
+      Products: Workforce (multi-agent), Invent (prompt-based creation).
+
+  - ref: lindy_getlatka
+    source: https://getlatka.com/companies/lindyai
+    date: 2025-12-22
+    knowledge: |
+      Lindy AI $50M funding (Série B).
+      $5.1M revenue (Oct 2024). 25-37 employees.
+      Investors: Menlo, Battery, Coatue.
+      Pivot from Teamflow ($50M raised previously).
+
+  - ref: bardeen_crunchbase
+    source: https://www.crunchbase.com/organization/bardeen
+    date: 2025-12-22
+    knowledge: |
+      Bardeen $21.8M total funding.
+      Latest: $3M from Dropbox Ventures, HubSpot Ventures.
+      300K+ users, 1,000+ paying customers.
+      Browser-based automation focus.
+
+  # B2B Platforms Sources
+  - ref: jasper_sacra
+    source: https://sacra.com/c/jasper/
+    date: 2025-12-22
+    knowledge: |
+      Jasper AI $131M funding, $1.5B valuation (2022) down to ~$1.2B (2024).
+      Revenue: $120M (2023) → $55M (2024). -54% decline.
+      70K+ paying customers. New CEO (ex-Dropbox) after pivot struggles.
+
+  - ref: writer_techcrunch
+    source: https://techcrunch.com/2024/11/12/generative-ai-startup-writer-raises-200m-at-a-1-9b-valuation/
+    date: 2024-11-12
+    knowledge: |
+      Writer $200M Series C at $1.9B valuation.
+      Total: $326M raised. 4x valuation increase in 1 year.
+      Investors: Iconiq, Premji Invest, Radical Ventures, Salesforce Ventures.
+      Clients: Vanguard, Accenture, L'Oreal, Uber, Qualcomm.
+
+  - ref: copyai_blog
+    source: https://www.copy.ai/blog/copy-ais-go-to-market-ai-platform-sees-480-revenue-growth-in-2024
+    date: 2024-12-01
+    knowledge: |
+      Copy.ai +480% revenue growth in 2024.
+      $23.7M revenue. 17M+ users, 5,000 customers.
+      Clients: ServiceNow, Juniper, Siemens.
+      Multi-model: GPT-4, Claude 3.5, Gemini, 85+ models.
+
+  # AI Agent Frameworks Sources
+  - ref: langchain_series_b
+    source: https://blog.langchain.com/series-b/
+    date: 2025-10-20
+    knowledge: |
+      LangChain $125M Series B at $1.25B valuation.
+      Total: $260M raised. Led by IVP.
+      Investors: Sequoia, Benchmark, CapitalG, Sapphire.
+      Corporate: ServiceNow, Workday, Cisco, Datadog, Databricks.
+
+  - ref: turing_frameworks
+    source: https://www.turing.com/resources/ai-agent-frameworks
+    date: 2025-12-22
+    knowledge: |
+      AI Agent Frameworks comparison 2025.
+      LangChain leads (80K+ GitHub stars).
+      CrewAI: role-based orchestration, lower learning curve.
+      AutoGen: Microsoft Research, async conversations.
+      Gartner: 33% enterprise apps will use agents by 2028 (vs <1% 2024).
+
+  # European Sources
+  - ref: lemlist_eu_startups
+    source: https://www.eu-startups.com/2025/10/sales-engagement-platform-lemlist-acquires-fellow-french-ai-platform-claap-to-transform-sales-with-ai-technology/
+    date: 2025-10-20
+    knowledge: |
+      lemlist acquires Claap (€12-25M valuation).
+      lemlist: €128M valuation, €30M ARR, 100K+ customers.
+      Bootstrapped since 2018, declined $30M VC in 2021.
+      Guillaume Moubeche founder.
+
+  - ref: lemlist_getlatka
+    source: https://getlatka.com/companies/lemlist
+    date: 2025-12-22
+    knowledge: |
+      lemlist revenue: $40M (2025), up from $26M (2024).
+      Growth: $720K (2019) → $40M (2025).
+      10K customers, 90+ remote employees.
+
+  - ref: cognism_getlatka
+    source: https://getlatka.com/companies/cognism
+    date: 2025-12-22
+    knowledge: |
+      Cognism revenue $83M (2024), up from $64M (2023).
+      $436M valuation, $129M raised.
+      559 employees, 6,400 customers.
+      Acquired Kaspr (2022).
+
+  - ref: kaspr_cognism
+    source: https://www.cognism.com/newsroom/kaspr-press-release
+    date: 2022-05-19
+    knowledge: |
+      Cognism acquired Kaspr for €21M.
+      Kaspr: French LinkedIn enrichment, 500M+ contacts.
+      ARR grew from $1.5M to $8M post-acquisition.
+      Founders: Allan Benguigui, Omar Ghorbel.
+
+  - ref: pennylane_cnbc
+    source: https://www.cnbc.com/2025/04/06/pennylane-doubles-valuation-as-alphabet-vc-fund-takes-stake.html
+    date: 2025-04-06
+    knowledge: |
+      Pennylane €75M Series C at €2B valuation.
+      Investors: Sequoia, CapitalG (Alphabet), DST Global.
+      4,500 accounting firms, 350K+ SMBs.
+      Target €100M ARR, breakeven 2025.
+
+  - ref: dust_techcrunch
+    source: https://techcrunch.com/2024/06/27/dust-grabs-another-16-million-for-its-enterprise-ai-assistants-connected-to-internal-data/
+    date: 2024-06-27
+    knowledge: |
+      Dust $16M Series A led by Sequoia.
+      Total: $21.5M raised.
+      Founders: Stanislas Polu (ex-OpenAI), Gabriel Hubert (ex-Stripe).
+      250+ enterprise customers, 5,000+ users.
+      Clients: Alan, Qonto, Pennylane.
+
+  - ref: mistral_wikipedia
+    source: https://en.wikipedia.org/wiki/Mistral_AI
+    date: 2025-12-22
+    knowledge: |
+      Mistral AI: €11.7B valuation (Sept 2025).
+      €1.7B Series C led by ASML (11% stake).
+      Total raised: ~$1.2B.
+      Founded 2023 by Arthur Mensch (ex-DeepMind).
+      Clients: Stellantis, CMA CGM, French Ministry of Defense.
+
+  - ref: waalaxy_tracxn
+    source: https://tracxn.com/d/companies/waalaxy
+    date: 2025-12-22
+    knowledge: |
+      Waalaxy: $2M revenue (2024), bootstrapped.
+      150K+ users, 10K paying customers.
+      Montpellier-based, ~60 employees.
+      Ex-ProspectIn, rebranded 2021.
+
+  - ref: surfe_techcrunch
+    source: https://techcrunch.com/2022/11/04/surfe-brings-your-crm-data-to-linkedin-and-vice-versa/
+    date: 2022-11-04
+    knowledge: |
+      Surfe (ex-Leadjet) €4M seed from 360 Capital.
+      LinkedIn-CRM sync for HubSpot, Salesforce, Pipedrive.
+      €1M+ ARR, 40K+ users.
+      Clients: Google, Uber, Spendesk.
+
+  - ref: parloa_eu_startups
+    source: https://www.eu-startups.com/2025/05/the-ai-uprising-20-european-startups-rewriting-the-rules-in-2025/
+    date: 2025-05-01
+    knowledge: |
+      Parloa: $1B unicorn (2025), $120M Series C.
+      Berlin-based conversational AI for contact centers.
+      NLU + generative AI for customer support.
+
+  - ref: genesy_eu_startups
+    source: https://www.eu-startups.com/2025/07/ai-meets-sales-10-european-startups-helping-you-optimise-your-sales-process/
+    date: 2025-07-01
+    knowledge: |
+      Genesy AI (Barcelona): €5.45M funding.
+      AI Sales Agent: engages, qualifies, books meetings.
+      Founded 2023.
+
+  - ref: typeform_eu_startups
+    source: https://www.eu-startups.com/directory/typeform/
+    date: 2025-12-22
+    knowledge: |
+      Typeform: $938M valuation, $188M raised.
+      Barcelona-based, founded 2012.
+      AI suite launched Feb 2025.
+      Potential acquisition by Bending Spoons (Oct 2025).
+
+  - ref: dropcontact_website
+    source: https://www.dropcontact.com/
+    date: 2025-12-22
+    knowledge: |
+      Dropcontact: Paris-based B2B enrichment.
+      100% GDPR compliant - no database, real-time generation.
+      Founded 2016, small team (1-10).
+
+  - ref: lgm_website
+    source: https://lagrowthmachine.com/
+    date: 2025-12-22
+    knowledge: |
+      La Growth Machine: €60-180/user/month.
+      Multi-channel (LinkedIn, Email, Twitter, Phone).
+      500+ clients including Payfit, Gymlib, Shapr.
+      Created by Deux.io team.
+
+  # New AI SDR Entrants (Dec 2025)
+  - ref: rox_sequoia
+    source: https://sequoiacap.com/article/partnering-with-rox-every-seller-needs-an-agent-swarm/
+    date: 2024-11-19
+    knowledge: |
+      Rox: $50M total funding (Seed + Series A).
+      Sequoia led seed, General Catalyst led Series A, GV participated.
+      35+ beta customers: Ramp, MongoDB, Confluent, OpenAI, Redis.
+      +8h/week reclaimed per AE, +35% customer activity.
+      "Agent swarm" approach for sales teams.
+
+  - ref: fuseai_yc
+    source: https://www.ycombinator.com/companies/fuseai
+    date: 2025-03-12
+    knowledge: |
+      FuseAI: $500K YC W25 funding.
+      $660K revenue (Sept 2025), 6 person team.
+      700M+ B2B contacts, multi-channel (LinkedIn + email).
+      Agentic OS for outbound sales automation.
+      Founders: Imogen Low, Saurav Bubber.
+
+  - ref: pinkfish_techcrunch
+    source: https://techcrunch.com/2025/02/11/pinkfish-helps-enterprises-build-ai-agents-through-natural-language-processing/
+    date: 2025-02-11
+    knowledge: |
+      Pinkfish AI: $7.6M Pre-Seed led by Norwest Venture Partners.
+      Founders ex-Talkdesk (grew from Series A to $10B).
+      Generative/Agentic Automation platform.
+      Clients: IPSY, Humach, Sage Publications, Talkdesk.
+      Self-healing automations, post-RPA approach.
+
+  - ref: lyzr_jazon
+    source: https://www.lyzr.ai/jazon/
+    date: 2025-12-22
+    knowledge: |
+      Lyzr Jazon 2.0: "World's first truly agentic AI SDR".
+      $1.5M ARR, 400+ clients (60 paying).
+      Downloadable/on-premise option available.
+      Partnerships: AWS, Google, IBM, NVIDIA, Accenture.
+      Accenture Ventures Tech Next Challenge 2024 winner.
+
+  - ref: luru_pitchbook
+    source: https://pitchbook.com/profiles/company/518215-60
+    date: 2025-12-22
+    knowledge: |
+      Luru: $1.4M funding from Gemba Capital, India Quotient, FalconX.
+      5 employees, founded 2022.
+      Human-in-the-loop AI SDR approach.
+      Specialized agents per stage (research, prospecting, messaging).
+      "Best AI SDR for CRM efficiency" G2 2025.
+
+  - ref: truffle_yc
+    source: https://www.ycombinator.com/companies/truffle-ai
+    date: 2025-03-12
+    knowledge: |
+      Truffle AI: $500K YC W25 funding.
+      2 person team, founded 2024.
+      APIs for integrating AI agents into applications.
+      Infrastructure layer (not direct-to-user).
+
+  - ref: callmenewton_fr
+    source: https://www.callmenewton.fr/sdr-ia/
+    date: 2025-12-22
+    knowledge: |
+      Call Me Newton: French AI SDR startup.
+      25+ enterprise clients: BMW Indigo, Thirard, Starwax, Videlio.
+      BPI France backed (AI & Data diagnostic).
+      Founders: Geoffroy de Becdelièvre, Antoine de Langlois, Mathieu Bouchara, Charles-Boris Pavard.
+      Focus: PME/ETI françaises, 24/7, CRM integration.

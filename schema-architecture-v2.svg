@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Architecture Sécurisée</text>
+  <text x="500" y="65" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="13">Données et exécution maîtrisées — Seule sortie : API LLM</text>
+
+  <!-- CLIENT SERVER BOX -->
+  <rect x="50" y="100" width="620" height="520" rx="16" fill="#ffffff" stroke="#0ea5e9" stroke-width="3"/>
+
+  <!-- Server label -->
+  <rect x="250" y="85" width="180" height="30" rx="15" fill="#0ea5e9"/>
+  <text x="340" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SERVEUR CLIENT</text>
+
+  <!-- App Métier -->
+  <rect x="80" y="140" width="260" height="130" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="210" y="170" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">APP MÉTIER</text>
+  <text x="100" y="195" fill="#475569" font-family="Arial, sans-serif" font-size="11">Django + PostgreSQL</text>
+  <text x="100" y="215" fill="#475569" font-family="Arial, sans-serif" font-size="11">Dashboard, API, Jobs</text>
+  <text x="100" y="235" fill="#475569" font-family="Arial, sans-serif" font-size="11">Intégrations Slack/MCP</text>
+  <text x="100" y="255" fill="#475569" font-family="Arial, sans-serif" font-size="11">Authentification</text>
+
+  <!-- Claude Code -->
+  <rect x="370" y="140" width="260" height="130" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="500" y="170" text-anchor="middle" fill="#6d28d9" font-family="Arial, sans-serif" font-size="14" font-weight="bold">CLAUDE CODE</text>
+  <text x="390" y="195" fill="#475569" font-family="Arial, sans-serif" font-size="11">Agent SDK + Worker</text>
+  <text x="390" y="215" fill="#475569" font-family="Arial, sans-serif" font-size="11">Exécution des agents</text>
+  <text x="390" y="235" fill="#475569" font-family="Arial, sans-serif" font-size="11">Orchestration outils</text>
+  <text x="390" y="255" fill="#475569" font-family="Arial, sans-serif" font-size="11">Accès SSH</text>
+
+  <!-- Scripts -->
+  <rect x="80" y="290" width="260" height="130" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <text x="210" y="320" text-anchor="middle" fill="#b45309" font-family="Arial, sans-serif" font-size="14" font-weight="bold">SCRIPTS</text>
+  <text x="100" y="345" fill="#475569" font-family="Arial, sans-serif" font-size="11">Workflows agentiques</text>
+  <text x="100" y="365" fill="#475569" font-family="Arial, sans-serif" font-size="11">Instructions.md</text>
+  <text x="100" y="385" fill="#475569" font-family="Arial, sans-serif" font-size="11">25 outils intégrés</text>
+  <text x="100" y="405" fill="#475569" font-family="Arial, sans-serif" font-size="11">Versionné Git</text>
+
+  <!-- Data -->
+  <rect x="370" y="290" width="260" height="130" rx="8" fill="#f0fdf4" stroke="#10b981" stroke-width="2"/>
+  <text x="500" y="320" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif" font-size="14" font-weight="bold">DONNÉES</text>
+  <text x="390" y="345" fill="#475569" font-family="Arial, sans-serif" font-size="11">PostgreSQL local</text>
+  <text x="390" y="365" fill="#475569" font-family="Arial, sans-serif" font-size="11">Fichiers agents/projects</text>
+  <text x="390" y="385" fill="#475569" font-family="Arial, sans-serif" font-size="11">Historique complet</text>
+  <text x="390" y="405" fill="#475569" font-family="Arial, sans-serif" font-size="11">Traçabilité 100%</text>
+
+  <!-- APIs outils (zone pointillée) -->
+  <rect x="80" y="440" width="550" height="80" rx="8" fill="#fefce8" stroke="#eab308" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="100" y="465" fill="#a16207" font-family="Arial, sans-serif" font-size="11" font-weight="bold">APPELS API OUTILS</text>
+  <text x="100" y="485" fill="#78716c" font-family="Arial, sans-serif" font-size="10">Pappers, SIRENE, LinkedIn, Apollo, Google...</text>
+  <text x="100" y="505" fill="#78716c" font-family="Arial, sans-serif" font-size="10">Requêtes publiques uniquement (SIREN, noms entreprises)</text>
+
+  <!-- Footer client -->
+  <rect x="80" y="540" width="550" height="50" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1"/>
+  <text x="355" y="565" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Le serveur évolue via Claude Code lui-même</text>
+  <text x="355" y="580" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="10">Nouveaux workflows, dashboards, intégrations — sans intervention externe</text>
+
+  <!-- LLM API BOX -->
+  <rect x="750" y="200" width="200" height="200" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+  <text x="850" y="235" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="14" font-weight="bold">API LLM</text>
+
+  <!-- Anthropic -->
+  <rect x="775" y="255" width="150" height="45" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1"/>
+  <text x="850" y="280" text-anchor="middle" fill="#1e293b" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Anthropic</text>
+  <text x="850" y="293" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Claude API</text>
+
+  <!-- Self-hosted -->
+  <rect x="775" y="310" width="150" height="45" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="850" y="335" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="11">Self-hosted</text>
+  <text x="850" y="348" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="10">Llama, Mistral...</text>
+
+  <text x="850" y="380" text-anchor="middle" fill="#b45309" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Internalisable</text>
+
+  <!-- Arrow -->
+  <line x1="670" y1="300" x2="740" y2="300" stroke="#f59e0b" stroke-width="4"/>
+  <polygon points="735,292 755,300 735,308" fill="#f59e0b"/>
+
+  <text x="705" y="285" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="9">Prompts</text>
+  <text x="705" y="320" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="9">Réponses</text>
+
+  <!-- Security box -->
+  <rect x="750" y="450" width="200" height="120" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+  <text x="850" y="475" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SÉCURITÉ</text>
+
+  <circle cx="770" cy="500" r="5" fill="#22c55e"/>
+  <text x="785" y="504" fill="#374151" font-family="Arial, sans-serif" font-size="10">Données chez client</text>
+
+  <circle cx="770" cy="520" r="5" fill="#22c55e"/>
+  <text x="785" y="524" fill="#374151" font-family="Arial, sans-serif" font-size="10">Scripts versionnés</text>
+
+  <circle cx="770" cy="540" r="5" fill="#22c55e"/>
+  <text x="785" y="544" fill="#374151" font-family="Arial, sans-serif" font-size="10">Traçabilité totale</text>
+
+  <circle cx="770" cy="560" r="5" fill="#22c55e"/>
+  <text x="785" y="564" fill="#374151" font-family="Arial, sans-serif" font-size="10">LLM substituable</text>
+</svg>

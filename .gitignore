@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Database
+*.sqlite3
+
+# Logs
+*.log
+
+# Claude
+.claude/
+
+# Playwright
+.playwright-mcp/
+
+# Node
+node_modules/
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,76 @@
+name: Otomata Market Analysis - B2B AI Competitive Landscape
+date: 2025-12-22
+agent: 251222-otomata-market-analysis
+project_name: 321
+type: one-off
+instructions: |
+  Analyse concurrentielle du marché B2B AI pour le projet Otomata.
+  Focus: mid-size companies, leaders établis + nouveaux entrants.
+  Segments: AI SDR, Data Enrichment, Process Automation, B2B Platforms, Agent Frameworks.
+
+tasks:
+  - name: ai-sdr-research
+    instructions: |
+      Identifier et analyser les solutions AI SDR (11x, Artisan, Regie.ai, etc.)
+      Metrics: funding, pricing, features, différenciateurs
+    summary: "9 solutions analysées. Leaders: 11x ($350M), Artisan ($39M). Challengers: AiSDR, Persana."
+    completed_at: 2025-12-22T15:00Z
+    files:
+      - segments/ai-sdr.md
+
+  - name: data-enrichment-research
+    instructions: |
+      Analyser les plateformes d'enrichissement de données B2B
+      Focus: Clay, Apollo, Harmonic, ZoomInfo
+    summary: "6 solutions analysées. Leaders: Clay ($1.25B), Apollo, ZoomInfo. Trend waterfall."
+    completed_at: 2025-12-22T15:10Z
+    files:
+      - segments/data-enrichment.md
+
+  - name: process-automation-research
+    instructions: |
+      Cartographier les solutions d'automatisation (Zapier, n8n, Make)
+      et les nouveaux entrants AI-native (Relevance AI, Lindy, Bardeen)
+    summary: "6 solutions analysées. n8n ($2.5B) challenge Zapier ($5B). AI-native disruptors en croissance."
+    completed_at: 2025-12-22T15:30Z
+    files:
+      - segments/process-automation.md
+
+  - name: b2b-platforms-research
+    instructions: |
+      Analyser les plateformes B2B AI content/GTM
+      Focus: Writer, Jasper, Copy.ai
+    summary: "3 solutions analysées. Writer ($1.9B, +4x). Jasper en difficulté (-54% revenue). Copy.ai +480%."
+    completed_at: 2025-12-22T15:40Z
+    files:
+      - segments/b2b-platforms.md
+
+  - name: ai-agents-research
+    instructions: |
+      Cartographier les frameworks de développement d'agents IA
+      Focus: LangChain, CrewAI, AutoGen
+    summary: "5 frameworks analysés. LangChain leader ($1.25B). CrewAI et AutoGen challengers."
+    completed_at: 2025-12-22T15:50Z
+    files:
+      - segments/ai-agents.md
+
+  - name: synthesis
+    instructions: |
+      Produire une synthèse transversale avec insights et opportunités
+    summary: "Market overview créé. Key trends: convergence, AI-native disruption, agent paradigm."
+    completed_at: 2025-12-22T16:00Z
+    files:
+      - synthesis/market-overview.md
+
+  - name: europe-focus
+    instructions: |
+      Focus sur les acteurs européens et français
+      Cartographier les champions locaux par segment
+    summary: "15+ acteurs EU analysés. Leaders FR: Mistral (€11.7B), lemlist ($40M ARR bootstrapped), Pennylane (€2B). DE: n8n ($2.5B), Parloa ($1B). UK: Cognism ($83M rev)."
+    completed_at: 2025-12-22T17:00Z
+    files:
+      - segments/europe.md
+
+tools:
+  - WebSearch
+  - mcp__playwright

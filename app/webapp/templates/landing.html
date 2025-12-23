@@ -1,0 +1,316 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otomata - Listes B2B qualifiées par agents IA</title>
+  <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-bg {
+      background: linear-gradient(180deg, #fef9e7 0%, #fdf2e9 30%, #ebf5fb 100%);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-900 antialiased bg-white">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-300 via-amber-400 to-orange-400"></div>
+        <span class="text-xl font-semibold text-gray-900">otomata</span>
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="#services" class="text-gray-600 hover:text-gray-900 text-sm">Services</a>
+        <a href="#tarifs" class="text-gray-600 hover:text-gray-900 text-sm">Tarifs</a>
+        <a href="#contact" class="border border-gray-300 px-4 py-2 rounded-lg text-sm font-medium hover:border-gray-400 transition">
+          Nous contacter
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg pt-32 pb-16 px-6 relative overflow-hidden min-h-[90vh] flex items-center">
+    <!-- Background illustration -->
+    <div class="absolute inset-0">
+      <img src="{% static 'images/slide1-titre-bg.png' %}" alt="" class="w-full h-full object-cover opacity-60">
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <a href="#comment" class="inline-block bg-white/80 backdrop-blur border border-gray-200 px-4 py-1.5 rounded-full text-sm font-medium mb-8 text-gray-700 hover:bg-white transition">
+        Découvrir notre approche →
+      </a>
+
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-gray-900">
+        <span class="italic">Vos listes de prospection,</span><br>
+        <span class="italic">qualifiées par l'IA.</span>
+      </h1>
+
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Créez vos listings B2B sur mesure. Critères spécifiques, données enrichies, contacts vérifiés. <strong class="text-gray-900">Vous prospectez, on prépare.</strong>
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="bg-gray-900 text-white px-8 py-4 rounded-lg font-medium hover:bg-gray-800 transition shadow-lg">
+          Demander une demo
+        </a>
+        <a href="https://cal.com/alexis-321/30min" target="_blank" class="bg-white border border-gray-300 px-8 py-4 rounded-lg font-medium hover:bg-gray-50 transition">
+          Prendre rendez-vous
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-4xl italic text-center mb-4">Pensé pour gagner du temps</h2>
+      <p class="text-gray-500 text-center mb-16 max-w-xl mx-auto">Trois services pour préparer votre outbound. Vous choisissez ce dont vous avez besoin.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-gray-300 transition-all">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <span class="text-sm text-gray-500">Création de listings</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Identifiez vos cibles</h3>
+          <p class="text-gray-600 mb-6">Vous définissez vos critères (secteur, taille, localisation, signaux...). On identifie les entreprises correspondantes.</p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full">Critères sur mesure</span>
+            <span class="px-3 py-1 bg-sky-50 text-sky-700 text-xs rounded-full">Sources FR/EU</span>
+            <span class="px-3 py-1 bg-amber-50 text-amber-700 text-xs rounded-full">Hors Apollo</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-gray-300 transition-all">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+              </svg>
+            </div>
+            <span class="text-sm text-gray-500">Enrichissement</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Enrichissez vos données</h3>
+          <p class="text-gray-600 mb-6">On enrichit vos listes existantes ou nos listings. Contacts décideurs, emails, téléphones, données légales.</p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-violet-50 text-violet-700 text-xs rounded-full">Dirigeants</span>
+            <span class="px-3 py-1 bg-rose-50 text-rose-700 text-xs rounded-full">Emails vérifiés</span>
+            <span class="px-3 py-1 bg-teal-50 text-teal-700 text-xs rounded-full">Téléphones</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl hover:border-gray-300 transition-all md:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+              <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <span class="text-sm text-gray-500">Qualification</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Priorisez vos comptes</h3>
+          <p class="text-gray-600 mb-6">On score et priorise vos comptes selon vos critères. Vous commencez par les meilleurs prospects.</p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs rounded-full">Scoring</span>
+            <span class="px-3 py-1 bg-pink-50 text-pink-700 text-xs rounded-full">Segmentation</span>
+            <span class="px-3 py-1 bg-lime-50 text-lime-700 text-xs rounded-full">Priorisation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comment ça marche -->
+  <section id="comment" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-4xl italic text-center mb-4">Comment ça marche</h2>
+      <p class="text-gray-500 text-center mb-12 max-w-xl mx-auto">Des agents IA qui orchestrent les outils pour collecter et enrichir vos données.</p>
+
+      <!-- SVG Diagram - Full width -->
+      <div class="rounded-2xl shadow-xl overflow-hidden mb-16 border border-gray-200">
+        <img src="{% static 'images/schema-script-agentique.svg' %}" alt="Architecture Otomata" class="w-full">
+      </div>
+
+      <!-- Process steps -->
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="w-10 h-10 bg-sky-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">1</div>
+          <h3 class="font-semibold mb-2">Brief</h3>
+          <p class="text-gray-500 text-sm">Vous décrivez votre cible idéale et vos critères</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="w-10 h-10 bg-amber-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">2</div>
+          <h3 class="font-semibold mb-2">Instructions</h3>
+          <p class="text-gray-500 text-sm">On configure les agents avec vos spécifications</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="w-10 h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">3</div>
+          <h3 class="font-semibold mb-2">Exécution</h3>
+          <p class="text-gray-500 text-sm">Les agents collectent et enrichissent les données</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200">
+          <div class="w-10 h-10 bg-emerald-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">4</div>
+          <h3 class="font-semibold mb-2">Livraison</h3>
+          <p class="text-gray-500 text-sm">Vous recevez vos listes qualifiées (CSV, CRM)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Résultats -->
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-sm text-gray-500 mb-2 block">Projet récent</span>
+          <h2 class="font-display text-4xl italic mb-4">Listing cabinets comptables</h2>
+          <p class="text-gray-600 mb-8">Identification et enrichissement de cabinets comptables en France pour un éditeur de logiciels.</p>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gray-50 rounded-xl p-5">
+              <div class="text-3xl font-bold text-gray-900">354</div>
+              <div class="text-gray-500 text-sm">entreprises qualifiées</div>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-5">
+              <div class="text-3xl font-bold text-gray-900">1 770</div>
+              <div class="text-gray-500 text-sm">contacts décideurs</div>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-5">
+              <div class="text-3xl font-bold text-emerald-600">~2min</div>
+              <div class="text-gray-500 text-sm">par entreprise</div>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-5">
+              <div class="text-3xl font-bold text-emerald-600">96%</div>
+              <div class="text-gray-500 text-sm">couverture contacts</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <img src="{% static 'images/slide7-opportunite.png' %}" alt="Opportunité" class="rounded-2xl shadow-2xl max-w-sm w-full">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="tarifs" class="py-24 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="font-display text-4xl italic text-center mb-4">Tarifs clairs, sans surprises</h2>
+      <p class="text-gray-500 text-center mb-12">Pas d'abonnement. Vous payez ce dont vous avez besoin.</p>
+
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          <div>
+            <h3 class="text-2xl font-semibold mb-2">Sur devis</h3>
+            <p class="text-gray-500 mb-6">Le prix dépend de la complexité des critères et du volume.</p>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="text-gray-700">Listing simple : à partir de <strong>500€</strong></span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="text-gray-700">Listing + enrichissement : à partir de <strong>1 000€</strong></span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="text-gray-700">Projet complet : <strong>sur mesure</strong></span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-6 text-center min-w-[160px]">
+            <div class="text-sm text-gray-500 mb-1">Exemple</div>
+            <div class="text-4xl font-bold text-gray-900">~3€</div>
+            <div class="text-gray-500 text-sm">par entreprise enrichie</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-24 hero-bg relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="{% static 'images/slide3-challenges.png' %}" alt="" class="w-full h-full object-cover opacity-40">
+    </div>
+    <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <h2 class="font-display text-4xl md:text-5xl italic mb-6 text-gray-900">Vos listes prêtes en quelques jours</h2>
+      <p class="text-gray-600 mb-10 text-lg">
+        Décrivez votre cible idéale. On vous montre ce qu'on peut produire.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:alexis@321founded.com" class="bg-gray-900 text-white px-10 py-4 rounded-lg font-medium text-lg hover:bg-gray-800 transition shadow-lg">
+          Demander une demo
+        </a>
+        <a href="https://cal.com/alexis-321/30min" target="_blank" class="bg-white border border-gray-300 px-10 py-4 rounded-lg font-medium text-lg hover:bg-gray-50 transition">
+          Prendre RDV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-300 via-amber-400 to-orange-400"></div>
+            <span class="text-xl font-semibold text-gray-900">otomata</span>
+          </div>
+          <p class="text-gray-500 text-sm">Listes B2B qualifiées par agents IA</p>
+        </div>
+        <div class="flex gap-12">
+          <div>
+            <h4 class="font-semibold text-sm mb-3">Produit</h4>
+            <ul class="space-y-2 text-sm text-gray-500">
+              <li><a href="#services" class="hover:text-gray-700">Services</a></li>
+              <li><a href="#tarifs" class="hover:text-gray-700">Tarifs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm mb-3">Contact</h4>
+            <ul class="space-y-2 text-sm text-gray-500">
+              <li><a href="mailto:alexis@321founded.com" class="hover:text-gray-700">Email</a></li>
+              <li><a href="https://cal.com/alexis-321/30min" class="hover:text-gray-700">Rendez-vous</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-gray-100 text-center text-gray-400 text-sm">
+        Une solution <a href="https://321founded.com" class="text-gray-500 hover:text-gray-700">321 Founded</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

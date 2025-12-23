@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+# Notion CLI wrapper - quick access to Notion operations
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [ $# -eq 0 ]; then
+    cat << 'EOF'
+Notion CLI - Quick access to Notion operations
+
+Usage: notion <command> [options]
+
+Commands:
+  get-page <id>              Get page content
+  create-page <title>        Create page under parent
+  search <query>             Search Notion workspace
+  query-db <id>              Query database
+  get-db <id>                Get database schema
+  update-page <id>           Update page properties
+  append <id>                Append content blocks
+
+Examples:
+  notion get-page ea9e6565c8384c75a40ccfd49de0973e
+  notion create-page --parent_id febbd37372d54dd9bfb844a74757c441 --title "Test" --parent_type page
+  notion search "321-AI"
+
+EOF
+    exit 0
+fi
+
+case "$1" in
+    get-page)
+        shift
+        if [ $# -gt 0 ] && [[ ! "$1" =~ ^- ]]; then
+            python3 "$SCRIPT_DIR/get_page.py" --page_id "$1" "${@:2}"
+        else
+            python3 "$SCRIPT_DIR/get_page.py" "$@"
+        fi
+        ;;
+    create-page)
+        shift
+        python3 "$SCRIPT_DIR/create_page.py" "$@"
+        ;;
+    search)
+        shift
+        if [ $# -gt 0 ] && [[ ! "$1" =~ ^- ]]; then
+            python3 "$SCRIPT_DIR/search.py" --query "$1" "${@:2}"
+        else
+            python3 "$SCRIPT_DIR/search.py" "$@"
+        fi
+        ;;
+    query-db)
+        shift
+        if [ $# -gt 0 ] && [[ ! "$1" =~ ^- ]]; then
+            python3 "$SCRIPT_DIR/query_database.py" --database_id "$1" "${@:2}"
+        else
+            python3 "$SCRIPT_DIR/query_database.py" "$@"
+        fi
+        ;;
+    get-db)
+        shift
+        if [ $# -gt 0 ] && [[ ! "$1" =~ ^- ]]; then
+            python3 "$SCRIPT_DIR/get_database.py" --database_id "$1" "${@:2}"
+        else
+            python3 "$SCRIPT_DIR/get_database.py" "$@"
+        fi
+        ;;
+    update-page)
+        shift
+        if [ $# -gt 0 ] && [[ ! "$1" =~ ^- ]]; then
+            python3 "$SCRIPT_DIR/update_page.py" --page_id "$1" "${@:2}"
+        else
+            python3 "$SCRIPT_DIR/update_page.py" "$@"
+        fi
+        ;;
+    append)
+        shift
+        if [ $# -ge 2 ] && [[ ! "$1" =~ ^- ]] && [[ ! "$2" =~ ^- ]]; then
+            python3 "$SCRIPT_DIR/append_blocks.py" --page_id "$1" --markdown-file "$2" "${@:3}"
+        elif [ $# -gt 0 ] && [[ ! "$1" =~ ^- ]]; then
+            python3 "$SCRIPT_DIR/append_blocks.py" --page_id "$1" "${@:2}"
+        else
+            python3 "$SCRIPT_DIR/append_blocks.py" "$@"
+        fi
+        ;;
+    *)
+        echo "Unknown command: $1"
+        echo "Run 'notion' for help"
+        exit 1
+        ;;
+esac

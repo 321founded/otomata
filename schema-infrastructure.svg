@@ -1,0 +1,365 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="bgInfra" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#111118"/>
+    </linearGradient>
+    <linearGradient id="interfaceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="workerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+    <linearGradient id="toolsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <filter id="shadow3">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glowBlue">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#3b82f6" flood-opacity="0.3"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowPurple">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#8b5cf6" flood-opacity="0.4"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="url(#bgInfra)"/>
+
+  <!-- Grid -->
+  <pattern id="gridInfra" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.05"/>
+  </pattern>
+  <rect width="1400" height="900" fill="url(#gridInfra)"/>
+
+  <!-- Title -->
+  <text x="700" y="45" text-anchor="middle" fill="#ffffff" font-family="system-ui" font-size="28" font-weight="700">Infrastructure Memento</text>
+  <text x="700" y="70" text-anchor="middle" fill="#71717a" font-family="system-ui" font-size="13">Serveur dédié + App métier Django + Claude SDK</text>
+
+  <!-- ============ LAYER 1: INTERFACES ============ -->
+  <g transform="translate(100, 100)">
+    <text x="0" y="0" fill="#3b82f6" font-family="system-ui" font-size="12" font-weight="600" letter-spacing="2">INTERFACES</text>
+
+    <!-- WebApp -->
+    <g transform="translate(0, 20)" filter="url(#shadow3)">
+      <rect width="180" height="100" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+      <rect x="12" y="12" width="156" height="20" rx="4" fill="#0f172a"/>
+      <circle cx="24" cy="22" r="4" fill="#ef4444"/>
+      <circle cx="38" cy="22" r="4" fill="#f59e0b"/>
+      <circle cx="52" cy="22" r="4" fill="#22c55e"/>
+      <text x="90" y="50" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">WebApp</text>
+      <text x="90" y="68" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Django Dashboard</text>
+      <text x="90" y="84" text-anchor="middle" fill="#64748b" font-family="monospace" font-size="9">memento.321founded.com</text>
+    </g>
+
+    <!-- Slack -->
+    <g transform="translate(200, 20)" filter="url(#shadow3)">
+      <rect width="180" height="100" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+      <rect x="70" y="15" width="40" height="40" rx="8" fill="#4A154B"/>
+      <text x="90" y="42" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="16" font-weight="bold">S</text>
+      <text x="90" y="75" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">Slack Bot</text>
+      <text x="90" y="90" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">@memento /memento</text>
+    </g>
+
+    <!-- CLI -->
+    <g transform="translate(400, 20)" filter="url(#shadow3)">
+      <rect width="180" height="100" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+      <rect x="50" y="15" width="80" height="40" rx="4" fill="#0f172a"/>
+      <text x="90" y="40" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">$ claude</text>
+      <text x="90" y="75" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">CLI Direct</text>
+      <text x="90" y="90" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Claude Code SSH</text>
+    </g>
+
+    <!-- MCP -->
+    <g transform="translate(600, 20)" filter="url(#shadow3)">
+      <rect width="180" height="100" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+      <circle cx="90" cy="35" r="18" fill="#d97706" opacity="0.2"/>
+      <text x="90" y="42" text-anchor="middle" fill="#f59e0b" font-family="system-ui" font-size="18" font-weight="bold">M</text>
+      <text x="90" y="75" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">MCP Server</text>
+      <text x="90" y="90" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Claude.ai Desktop</text>
+    </g>
+
+    <!-- API -->
+    <g transform="translate(800, 20)" filter="url(#shadow3)">
+      <rect width="180" height="100" rx="12" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+      <text x="90" y="40" text-anchor="middle" fill="#60a5fa" font-family="monospace" font-size="12">{...}</text>
+      <text x="90" y="75" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">REST API</text>
+      <text x="90" y="90" text-anchor="middle" fill="#94a3b8" font-family="system-ui" font-size="10">Extension Chrome</text>
+    </g>
+  </g>
+
+  <!-- Arrow from interfaces to Worker -->
+  <path d="M 700 230 L 700 280" stroke="#3b82f6" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <!-- ============ LAYER 2: WORKER (Central) ============ -->
+  <g transform="translate(250, 290)">
+    <text x="0" y="0" fill="#8b5cf6" font-family="system-ui" font-size="12" font-weight="600" letter-spacing="2">WORKER</text>
+
+    <!-- Main Worker Box -->
+    <g transform="translate(0, 15)" filter="url(#shadow3)">
+      <rect width="900" height="200" rx="16" fill="#1a1625" stroke="#8b5cf6" stroke-width="2"/>
+
+      <!-- FastAPI badge -->
+      <rect x="20" y="15" width="80" height="24" rx="4" fill="#059669"/>
+      <text x="60" y="32" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="11" font-weight="500">FastAPI</text>
+
+      <!-- Claude SDK badge -->
+      <rect x="110" y="15" width="100" height="24" rx="4" fill="#d97706"/>
+      <text x="160" y="32" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="11" font-weight="500">Claude SDK</text>
+
+      <!-- Worker components -->
+      <g transform="translate(30, 60)">
+        <rect width="190" height="120" rx="10" fill="#2d2640" stroke="#4c1d95" stroke-width="1"/>
+        <text x="95" y="30" text-anchor="middle" fill="#c4b5fd" font-family="system-ui" font-size="13" font-weight="600">Job Manager</text>
+        <text x="95" y="50" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="9">SELECT FOR UPDATE</text>
+        <text x="95" y="68" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="9">SKIP LOCKED</text>
+        <rect x="20" y="80" width="150" height="28" rx="4" fill="#1a1625"/>
+        <text x="95" y="100" text-anchor="middle" fill="#a78bfa" font-family="system-ui" font-size="10">Claiming atomique</text>
+      </g>
+
+      <g transform="translate(240, 60)">
+        <rect width="190" height="120" rx="10" fill="#2d2640" stroke="#4c1d95" stroke-width="1"/>
+        <text x="95" y="30" text-anchor="middle" fill="#c4b5fd" font-family="system-ui" font-size="13" font-weight="600">Agent Executor</text>
+        <text x="95" y="52" text-anchor="middle" fill="#a78bfa" font-family="system-ui" font-size="10">Streaming responses</text>
+        <text x="95" y="70" text-anchor="middle" fill="#a78bfa" font-family="system-ui" font-size="10">Tool calls</text>
+        <rect x="20" y="85" width="150" height="24" rx="4" fill="#7c3aed"/>
+        <text x="95" y="102" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="10" font-weight="500">MAX_CONCURRENT: 5</text>
+      </g>
+
+      <g transform="translate(450, 60)">
+        <rect width="190" height="120" rx="10" fill="#2d2640" stroke="#4c1d95" stroke-width="1"/>
+        <text x="95" y="30" text-anchor="middle" fill="#c4b5fd" font-family="system-ui" font-size="13" font-weight="600">Scheduler</text>
+        <text x="95" y="52" text-anchor="middle" fill="#a78bfa" font-family="system-ui" font-size="10">Jobs récurrents</text>
+        <text x="95" y="70" text-anchor="middle" fill="#a78bfa" font-family="system-ui" font-size="10">Cron expressions</text>
+        <rect x="20" y="85" width="150" height="24" rx="4" fill="#1a1625"/>
+        <text x="95" y="102" text-anchor="middle" fill="#7c3aed" font-family="monospace" font-size="9">*/15 * * * *</text>
+      </g>
+
+      <g transform="translate(660, 60)">
+        <rect width="210" height="120" rx="10" fill="#2d2640" stroke="#4c1d95" stroke-width="1"/>
+        <text x="105" y="30" text-anchor="middle" fill="#c4b5fd" font-family="system-ui" font-size="13" font-weight="600">Batch Executor</text>
+        <text x="105" y="52" text-anchor="middle" fill="#a78bfa" font-family="system-ui" font-size="10">Iterator pattern</text>
+        <text x="105" y="70" text-anchor="middle" fill="#a78bfa" font-family="system-ui" font-size="10">Parallélisation</text>
+        <g transform="translate(30, 82)">
+          <rect width="24" height="24" rx="4" fill="#7c3aed" opacity="0.8"/>
+          <rect x="30" width="24" height="24" rx="4" fill="#7c3aed" opacity="0.6"/>
+          <rect x="60" width="24" height="24" rx="4" fill="#7c3aed" opacity="0.4"/>
+          <rect x="90" width="24" height="24" rx="4" fill="#7c3aed" opacity="0.2"/>
+          <rect x="120" width="24" height="24" rx="4" fill="#7c3aed" opacity="0.1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ LAYER 3: DATA ============ -->
+  <g transform="translate(100, 530)">
+    <text x="0" y="0" fill="#10b981" font-family="system-ui" font-size="12" font-weight="600" letter-spacing="2">DATA LAYER</text>
+
+    <!-- PostgreSQL -->
+    <g transform="translate(0, 20)" filter="url(#shadow3)">
+      <rect width="280" height="180" rx="12" fill="#0f2922" stroke="#10b981" stroke-width="2"/>
+      <rect x="15" y="15" width="60" height="30" rx="6" fill="#059669"/>
+      <text x="45" y="35" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="11" font-weight="500">NeonDB</text>
+
+      <text x="140" y="35" text-anchor="start" fill="#fff" font-family="system-ui" font-size="15" font-weight="600">PostgreSQL</text>
+
+      <text x="20" y="65" fill="#6ee7b7" font-family="monospace" font-size="11">Chat</text>
+      <text x="90" y="65" fill="#4ade80" font-family="system-ui" font-size="10">conversations, tokens</text>
+
+      <text x="20" y="85" fill="#6ee7b7" font-family="monospace" font-size="11">Job</text>
+      <text x="90" y="85" fill="#4ade80" font-family="system-ui" font-size="10">status, scheduling, cron</text>
+
+      <text x="20" y="105" fill="#6ee7b7" font-family="monospace" font-size="11">Company</text>
+      <text x="90" y="105" fill="#4ade80" font-family="system-ui" font-size="10">sirene, pappers, linkedin</text>
+
+      <text x="20" y="125" fill="#6ee7b7" font-family="monospace" font-size="11">Person</text>
+      <text x="90" y="125" fill="#4ade80" font-family="system-ui" font-size="10">contacts enrichis</text>
+
+      <text x="20" y="145" fill="#6ee7b7" font-family="monospace" font-size="11">Message</text>
+      <text x="90" y="145" fill="#4ade80" font-family="system-ui" font-size="10">historique complet</text>
+
+      <rect x="15" y="158" width="250" height="16" rx="3" fill="#052e16"/>
+      <text x="140" y="170" text-anchor="middle" fill="#22c55e" font-family="system-ui" font-size="9">Traçabilité totale</text>
+    </g>
+
+    <!-- File System -->
+    <g transform="translate(310, 20)" filter="url(#shadow3)">
+      <rect width="280" height="180" rx="12" fill="#1c1917" stroke="#78716c" stroke-width="2"/>
+      <text x="20" y="35" fill="#fff" font-family="system-ui" font-size="15" font-weight="600">File System</text>
+
+      <text x="20" y="60" fill="#a8a29e" font-family="monospace" font-size="11">agents/</text>
+      <text x="100" y="60" fill="#78716c" font-family="system-ui" font-size="10">memento.yaml, knowledge</text>
+
+      <text x="20" y="80" fill="#a8a29e" font-family="monospace" font-size="11">projects/</text>
+      <text x="100" y="80" fill="#78716c" font-family="system-ui" font-size="10">corporate/project/</text>
+
+      <text x="20" y="100" fill="#a8a29e" font-family="monospace" font-size="11">instructions/</text>
+      <text x="115" y="100" fill="#78716c" font-family="system-ui" font-size="10">workflows, tools</text>
+
+      <text x="20" y="120" fill="#a8a29e" font-family="monospace" font-size="11">app/tools/</text>
+      <text x="100" y="120" fill="#78716c" font-family="system-ui" font-size="10">25 outils, 109 méthodes</text>
+
+      <rect x="15" y="135" width="250" height="35" rx="6" fill="#292524"/>
+      <text x="30" y="152" fill="#fbbf24" font-family="monospace" font-size="10">git commit</text>
+      <text x="110" y="152" fill="#a8a29e" font-family="system-ui" font-size="9">auto-save résultats</text>
+      <text x="30" y="165" fill="#a8a29e" font-family="system-ui" font-size="9">Reproductibilité garantie</text>
+    </g>
+
+    <!-- Tools Registry -->
+    <g transform="translate(620, 20)" filter="url(#shadow3)">
+      <rect width="280" height="180" rx="12" fill="#271a0a" stroke="#f59e0b" stroke-width="2"/>
+      <text x="20" y="35" fill="#fff" font-family="system-ui" font-size="15" font-weight="600">Outils Intégrés</text>
+      <text x="230" y="35" fill="#fbbf24" font-family="system-ui" font-size="11">25</text>
+
+      <g transform="translate(15, 50)">
+        <rect width="120" height="24" rx="4" fill="#422006"/>
+        <text x="60" y="16" text-anchor="middle" fill="#fcd34d" font-family="system-ui" font-size="10">Intelligence</text>
+      </g>
+      <text x="145" y="66" fill="#d97706" font-family="system-ui" font-size="9">Pappers, SIRENE, Apollo</text>
+
+      <g transform="translate(15, 80)">
+        <rect width="120" height="24" rx="4" fill="#422006"/>
+        <text x="60" y="16" text-anchor="middle" fill="#fcd34d" font-family="system-ui" font-size="10">Scraping</text>
+      </g>
+      <text x="145" y="96" fill="#d97706" font-family="system-ui" font-size="9">LinkedIn, Serper, Hunter</text>
+
+      <g transform="translate(15, 110)">
+        <rect width="120" height="24" rx="4" fill="#422006"/>
+        <text x="60" y="16" text-anchor="middle" fill="#fcd34d" font-family="system-ui" font-size="10">Productivité</text>
+      </g>
+      <text x="145" y="126" fill="#d97706" font-family="system-ui" font-size="9">Notion, Google, Slack</text>
+
+      <g transform="translate(15, 140)">
+        <rect width="120" height="24" rx="4" fill="#422006"/>
+        <text x="60" y="16" text-anchor="middle" fill="#fcd34d" font-family="system-ui" font-size="10">Marketing</text>
+      </g>
+      <text x="145" y="156" fill="#d97706" font-family="system-ui" font-size="9">Lemlist, Kaspr, Folk</text>
+    </g>
+
+    <!-- External APIs -->
+    <g transform="translate(930, 20)" filter="url(#shadow3)">
+      <rect width="280" height="180" rx="12" fill="#1e1b4b" stroke="#6366f1" stroke-width="2"/>
+      <text x="20" y="35" fill="#fff" font-family="system-ui" font-size="15" font-weight="600">APIs Externes</text>
+
+      <g transform="translate(20, 50)">
+        <circle r="8" cx="8" cy="8" fill="#d97706"/>
+        <text x="25" y="12" fill="#a5b4fc" font-family="system-ui" font-size="11">Anthropic (Claude)</text>
+      </g>
+
+      <g transform="translate(20, 75)">
+        <circle r="8" cx="8" cy="8" fill="#4285f4"/>
+        <text x="25" y="12" fill="#a5b4fc" font-family="system-ui" font-size="11">Google OAuth + APIs</text>
+      </g>
+
+      <g transform="translate(20, 100)">
+        <circle r="8" cx="8" cy="8" fill="#4A154B"/>
+        <text x="25" y="12" fill="#a5b4fc" font-family="system-ui" font-size="11">Slack Bot Token</text>
+      </g>
+
+      <g transform="translate(20, 125)">
+        <circle r="8" cx="8" cy="8" fill="#0077b5"/>
+        <text x="25" y="12" fill="#a5b4fc" font-family="system-ui" font-size="11">LinkedIn (Patchright)</text>
+      </g>
+
+      <g transform="translate(20, 150)">
+        <circle r="8" cx="8" cy="8" fill="#059669"/>
+        <text x="25" y="12" fill="#a5b4fc" font-family="system-ui" font-size="11">INSEE, Pappers, Apollo...</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Connections Worker to Data -->
+  <g stroke="#4ade80" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M 350 505 L 240 530"/>
+    <path d="M 550 505 L 450 530"/>
+    <path d="M 750 505 L 760 530"/>
+    <path d="M 950 505 L 1070 530"/>
+  </g>
+
+  <!-- Server badge -->
+  <g transform="translate(1100, 100)">
+    <rect width="200" height="120" rx="12" fill="#18181b" stroke="#3f3f46" stroke-width="1" filter="url(#shadow3)"/>
+    <text x="100" y="30" text-anchor="middle" fill="#71717a" font-family="system-ui" font-size="10" letter-spacing="1">SERVEUR</text>
+    <text x="100" y="55" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="16" font-weight="600">Scaleway</text>
+    <text x="100" y="75" text-anchor="middle" fill="#a1a1aa" font-family="system-ui" font-size="11">Dédié / VPS</text>
+    <rect x="30" y="88" width="140" height="22" rx="4" fill="#27272a"/>
+    <text x="100" y="103" text-anchor="middle" fill="#22c55e" font-family="monospace" font-size="10">Caddy reverse proxy</text>
+  </g>
+
+  <!-- Bottom stats -->
+  <g transform="translate(100, 750)">
+    <rect width="1200" height="70" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+
+    <g transform="translate(50, 20)">
+      <text x="0" y="15" fill="#fff" font-family="system-ui" font-size="24" font-weight="700">5</text>
+      <text x="0" y="35" fill="#71717a" font-family="system-ui" font-size="10">Agents parallèles</text>
+    </g>
+
+    <g transform="translate(200, 20)">
+      <text x="0" y="15" fill="#fff" font-family="system-ui" font-size="24" font-weight="700">25</text>
+      <text x="0" y="35" fill="#71717a" font-family="system-ui" font-size="10">Outils intégrés</text>
+    </g>
+
+    <g transform="translate(350, 20)">
+      <text x="0" y="15" fill="#fff" font-family="system-ui" font-size="24" font-weight="700">109</text>
+      <text x="0" y="35" fill="#71717a" font-family="system-ui" font-size="10">Méthodes disponibles</text>
+    </g>
+
+    <g transform="translate(520, 20)">
+      <text x="0" y="15" fill="#fff" font-family="system-ui" font-size="24" font-weight="700">~2min</text>
+      <text x="0" y="35" fill="#71717a" font-family="system-ui" font-size="10">/ company enrichie</text>
+    </g>
+
+    <g transform="translate(700, 20)">
+      <text x="0" y="15" fill="#fff" font-family="system-ui" font-size="24" font-weight="700">$0.10</text>
+      <text x="0" y="35" fill="#71717a" font-family="system-ui" font-size="10">/ enrichissement</text>
+    </g>
+
+    <g transform="translate(880, 20)">
+      <text x="0" y="15" fill="#fff" font-family="system-ui" font-size="24" font-weight="700">96%</text>
+      <text x="0" y="35" fill="#71717a" font-family="system-ui" font-size="10">Couverture contacts</text>
+    </g>
+
+    <g transform="translate(1040, 20)">
+      <text x="0" y="15" fill="#fff" font-family="system-ui" font-size="24" font-weight="700">100%</text>
+      <text x="0" y="35" fill="#71717a" font-family="system-ui" font-size="10">Traçabilité</text>
+    </g>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(100, 845)">
+    <rect x="0" y="0" width="14" height="14" rx="3" fill="#3b82f6"/>
+    <text x="22" y="11" fill="#a1a1aa" font-family="system-ui" font-size="11">Interfaces</text>
+
+    <rect x="100" y="0" width="14" height="14" rx="3" fill="#8b5cf6"/>
+    <text x="122" y="11" fill="#a1a1aa" font-family="system-ui" font-size="11">Worker</text>
+
+    <rect x="200" y="0" width="14" height="14" rx="3" fill="#10b981"/>
+    <text x="222" y="11" fill="#a1a1aa" font-family="system-ui" font-size="11">Data</text>
+
+    <rect x="280" y="0" width="14" height="14" rx="3" fill="#f59e0b"/>
+    <text x="302" y="11" fill="#a1a1aa" font-family="system-ui" font-size="11">Tools</text>
+
+    <rect x="360" y="0" width="14" height="14" rx="3" fill="#6366f1"/>
+    <text x="382" y="11" fill="#a1a1aa" font-family="system-ui" font-size="11">APIs</text>
+  </g>
+</svg>

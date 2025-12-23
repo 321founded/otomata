@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 700">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#12121a"/>
+    </linearGradient>
+    <linearGradient id="docGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.02"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="700" fill="url(#bg2)"/>
+
+  <!-- Subtle grid -->
+  <pattern id="grid2" width="50" height="50" patternUnits="userSpaceOnUse">
+    <circle cx="25" cy="25" r="0.5" fill="#ffffff" opacity="0.1"/>
+  </pattern>
+  <rect width="1400" height="700" fill="url(#grid2)"/>
+
+  <!-- Main instruction document - HERO -->
+  <g transform="translate(500, 100)" filter="url(#softShadow)">
+    <!-- Document background -->
+    <rect x="0" y="0" width="400" height="500" rx="16" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+
+    <!-- Tab bar -->
+    <rect x="0" y="0" width="400" height="44" rx="16" fill="#27272a"/>
+    <rect x="0" y="30" width="400" height="14" fill="#27272a"/>
+
+    <!-- Window controls -->
+    <circle cx="24" cy="22" r="6" fill="#ef4444" opacity="0.8"/>
+    <circle cx="46" cy="22" r="6" fill="#f59e0b" opacity="0.8"/>
+    <circle cx="68" cy="22" r="6" fill="#22c55e" opacity="0.8"/>
+
+    <!-- Tab -->
+    <rect x="90" y="8" width="140" height="28" rx="6" fill="#18181b"/>
+    <text x="160" y="27" text-anchor="middle" fill="#a1a1aa" font-family="system-ui" font-size="11">instructions.md</text>
+
+    <!-- Content area -->
+    <rect x="16" y="60" width="368" height="424" rx="8" fill="#0f0f12"/>
+
+    <!-- Markdown content -->
+    <text x="32" y="95" fill="#f472b6" font-family="JetBrains Mono, monospace" font-size="13" font-weight="600">## Objectif</text>
+    <text x="32" y="118" fill="#d4d4d8" font-family="system-ui" font-size="12">Enrichir</text>
+    <text x="78" y="118" fill="#fbbf24" font-family="monospace" font-size="12">{NAME}</text>
+    <text x="140" y="118" fill="#d4d4d8" font-family="system-ui" font-size="12">avec contacts décideurs</text>
+
+    <text x="32" y="158" fill="#f472b6" font-family="JetBrains Mono, monospace" font-size="13" font-weight="600">## Outils</text>
+
+    <!-- Tool list with icons -->
+    <rect x="32" y="172" width="336" height="32" rx="6" fill="#1e3a5f" opacity="0.4"/>
+    <circle cx="52" cy="188" r="10" fill="#3b82f6"/>
+    <text x="52" y="192" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="10">P</text>
+    <text x="72" y="192" fill="#60a5fa" font-family="monospace" font-size="12">Pappers</text>
+    <text x="140" y="192" fill="#71717a" font-family="system-ui" font-size="11">→ dirigeants légaux</text>
+
+    <rect x="32" y="212" width="336" height="32" rx="6" fill="#1e3a5f" opacity="0.3"/>
+    <circle cx="52" cy="228" r="10" fill="#0077b5"/>
+    <text x="52" y="232" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="10">in</text>
+    <text x="72" y="232" fill="#60a5fa" font-family="monospace" font-size="12">LinkedIn</text>
+    <text x="148" y="232" fill="#71717a" font-family="system-ui" font-size="11">→ employés vérifiés</text>
+
+    <rect x="32" y="252" width="336" height="32" rx="6" fill="#1e3a5f" opacity="0.2"/>
+    <circle cx="52" cy="268" r="10" fill="#8b5cf6"/>
+    <text x="52" y="272" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="10">K</text>
+    <text x="72" y="272" fill="#60a5fa" font-family="monospace" font-size="12">Kaspr</text>
+    <text x="120" y="272" fill="#71717a" font-family="system-ui" font-size="11">→ emails professionnels</text>
+
+    <rect x="32" y="292" width="336" height="32" rx="6" fill="#1e3a5f" opacity="0.15"/>
+    <circle cx="52" cy="308" r="10" fill="#059669"/>
+    <text x="52" y="312" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="10">S</text>
+    <text x="72" y="312" fill="#60a5fa" font-family="monospace" font-size="12">Serper</text>
+    <text x="130" y="312" fill="#71717a" font-family="system-ui" font-size="11">→ actualités, news</text>
+
+    <text x="32" y="360" fill="#f472b6" font-family="JetBrains Mono, monospace" font-size="13" font-weight="600">## Principes</text>
+
+    <text x="32" y="385" fill="#4ade80" font-family="system-ui" font-size="12">●</text>
+    <text x="50" y="385" fill="#a1a1aa" font-family="system-ui" font-size="12">Sois resourceful - adapte ton approche</text>
+
+    <text x="32" y="408" fill="#4ade80" font-family="system-ui" font-size="12">●</text>
+    <text x="50" y="408" fill="#a1a1aa" font-family="system-ui" font-size="12">Qualité > Quantité</text>
+
+    <text x="32" y="431" fill="#4ade80" font-family="system-ui" font-size="12">●</text>
+    <text x="50" y="431" fill="#a1a1aa" font-family="system-ui" font-size="12">N'abandonne pas trop vite</text>
+
+    <text x="32" y="470" fill="#f472b6" font-family="JetBrains Mono, monospace" font-size="13" font-weight="600">## Output →</text>
+    <text x="120" y="470" fill="#fbbf24" font-family="monospace" font-size="12">/tmp/{ID}.json</text>
+  </g>
+
+  <!-- Left side - Input sources -->
+  <g transform="translate(60, 150)">
+    <text x="0" y="0" fill="#71717a" font-family="system-ui" font-size="11" font-weight="500" letter-spacing="2">SOURCES</text>
+
+    <!-- API boxes -->
+    <g transform="translate(0, 30)">
+      <rect width="160" height="60" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="80" y="28" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">Pappers API</text>
+      <text x="80" y="46" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">Registre français</text>
+    </g>
+
+    <g transform="translate(0, 110)">
+      <rect width="160" height="60" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="80" y="28" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">LinkedIn</text>
+      <text x="80" y="46" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">Browser automation</text>
+    </g>
+
+    <g transform="translate(0, 190)">
+      <rect width="160" height="60" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="80" y="28" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">SIRENE</text>
+      <text x="80" y="46" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">INSEE officiel</text>
+    </g>
+
+    <g transform="translate(0, 270)">
+      <rect width="160" height="60" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="80" y="28" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">Kaspr</text>
+      <text x="80" y="46" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="10">Email enrichment</text>
+    </g>
+  </g>
+
+  <!-- Right side - Outputs -->
+  <g transform="translate(1180, 150)">
+    <text x="0" y="0" fill="#71717a" font-family="system-ui" font-size="11" font-weight="500" letter-spacing="2">OUTPUTS</text>
+
+    <g transform="translate(0, 30)">
+      <rect width="160" height="60" rx="10" fill="#134e4a" stroke="#14b8a6" stroke-width="1"/>
+      <text x="80" y="28" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">PostgreSQL</text>
+      <text x="80" y="46" text-anchor="middle" fill="#5eead4" font-family="system-ui" font-size="10">Companies DB</text>
+    </g>
+
+    <g transform="translate(0, 110)">
+      <rect width="160" height="60" rx="10" fill="#134e4a" stroke="#14b8a6" stroke-width="1"/>
+      <text x="80" y="28" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">JSON</text>
+      <text x="80" y="46" text-anchor="middle" fill="#5eead4" font-family="system-ui" font-size="10">/tmp/{ID}.json</text>
+    </g>
+
+    <g transform="translate(0, 190)">
+      <rect width="160" height="60" rx="10" fill="#134e4a" stroke="#14b8a6" stroke-width="1"/>
+      <text x="80" y="28" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">Notion</text>
+      <text x="80" y="46" text-anchor="middle" fill="#5eead4" font-family="system-ui" font-size="10">Database sync</text>
+    </g>
+
+    <g transform="translate(0, 270)">
+      <rect width="160" height="60" rx="10" fill="#134e4a" stroke="#14b8a6" stroke-width="1"/>
+      <text x="80" y="28" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">Lemlist</text>
+      <text x="80" y="46" text-anchor="middle" fill="#5eead4" font-family="system-ui" font-size="10">Campaign push</text>
+    </g>
+  </g>
+
+  <!-- Connection arrows left -->
+  <g stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.5">
+    <path d="M 220 210 Q 360 210 500 250">
+      <animate attributeName="stroke-dasharray" values="0,1000;200,1000" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 220 290 Q 360 290 500 320">
+      <animate attributeName="stroke-dasharray" values="0,1000;200,1000" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </path>
+    <path d="M 220 370 Q 360 370 500 360">
+      <animate attributeName="stroke-dasharray" values="0,1000;200,1000" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </path>
+    <path d="M 220 450 Q 360 430 500 400">
+      <animate attributeName="stroke-dasharray" values="0,1000;200,1000" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+    </path>
+  </g>
+
+  <!-- Connection arrows right -->
+  <g stroke="#14b8a6" stroke-width="2" fill="none" opacity="0.5">
+    <path d="M 900 250 Q 1040 210 1180 210">
+      <animate attributeName="stroke-dasharray" values="0,1000;200,1000" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </path>
+    <path d="M 900 320 Q 1040 290 1180 290">
+      <animate attributeName="stroke-dasharray" values="0,1000;200,1000" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </path>
+    <path d="M 900 360 Q 1040 370 1180 370">
+      <animate attributeName="stroke-dasharray" values="0,1000;200,1000" dur="2s" repeatCount="indefinite" begin="1.8s"/>
+    </path>
+    <path d="M 900 400 Q 1040 430 1180 450">
+      <animate attributeName="stroke-dasharray" values="0,1000;200,1000" dur="2s" repeatCount="indefinite" begin="2.1s"/>
+    </path>
+  </g>
+
+  <!-- AI Engine badge -->
+  <g transform="translate(600, 620)">
+    <rect x="0" y="0" width="200" height="50" rx="25" fill="#7c3aed" filter="url(#glow2)"/>
+    <text x="100" y="22" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="14" font-weight="600">Claude Agent</text>
+    <text x="100" y="40" text-anchor="middle" fill="#ddd6fe" font-family="system-ui" font-size="11">Exécute l'instruction</text>
+  </g>
+
+  <!-- Arrow from AI to doc -->
+  <path d="M 700 620 L 700 600" stroke="#7c3aed" stroke-width="3" fill="none"/>
+  <polygon points="700,605 694,618 706,618" fill="#7c3aed"/>
+
+  <!-- Title -->
+  <text x="700" y="50" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="32" font-weight="700">Script Agentique</text>
+  <text x="700" y="75" text-anchor="middle" fill="#71717a" font-family="system-ui" font-size="14">Une instruction riche + des outils = automatisation intelligente</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 640)">
+    <rect x="0" y="0" width="12" height="12" rx="2" fill="#3b82f6"/>
+    <text x="20" y="10" fill="#a1a1aa" font-family="system-ui" font-size="11">Lecture (APIs)</text>
+
+    <rect x="120" y="0" width="12" height="12" rx="2" fill="#14b8a6"/>
+    <text x="140" y="10" fill="#a1a1aa" font-family="system-ui" font-size="11">Écriture (Outputs)</text>
+
+    <rect x="260" y="0" width="12" height="12" rx="2" fill="#7c3aed"/>
+    <text x="280" y="10" fill="#a1a1aa" font-family="system-ui" font-size="11">Moteur IA</text>
+  </g>
+</svg>

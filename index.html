@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otomata - Plateforme agentique pour l'acquisition B2B</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            warm: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            },
+            sky: {
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-bg {
+      background: linear-gradient(180deg, #fef3c7 0%, #fed7aa 30%, #bae6fd 100%);
+    }
+    .section-warm {
+      background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+    }
+    .section-sky {
+      background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+    .card-glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-900 antialiased">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full bg-white/70 backdrop-blur-md z-50 border-b border-warm-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-xl font-bold text-gray-800">Otomata</div>
+      <a href="#contact" class="bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-700 transition">
+        Parlons de votre projet
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg pt-32 pb-24 px-6 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="inline-block bg-white/60 backdrop-blur px-4 py-1.5 rounded-full text-sm font-medium mb-6 text-gray-700">
+        Plateforme agentique B2B
+      </div>
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
+        La préparation de l'outbound,<br>
+        <span class="text-warm-600">pas l'outbound lui-même</span>
+      </h1>
+      <p class="text-xl text-gray-700 max-w-2xl mx-auto mb-10">
+        Les AI SDR veulent tout faire et déçoivent. Nous faisons bien une seule chose :
+        <strong>préparer vos listes, enrichir vos données, qualifier vos cibles.</strong>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="bg-gray-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-700 transition shadow-lg">
+          Demander une démo
+        </a>
+        <a href="#approche" class="bg-white/80 backdrop-blur border border-gray-200 px-8 py-4 rounded-full font-semibold hover:bg-white transition">
+          Voir l'approche
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marché -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Le marché AI SDR explose</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">$200M+ levés en 2025 sur les agents IA pour la vente. Grosse dynamique.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6 mb-12">
+        <div class="bg-gray-50 rounded-2xl p-6 text-center">
+          <div class="text-2xl font-bold text-warm-600 mb-1">$50M</div>
+          <div class="text-sm text-gray-600">11x (a16z)</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6 text-center">
+          <div class="text-2xl font-bold text-warm-600 mb-1">$50M</div>
+          <div class="text-sm text-gray-600">Rox (Sequoia)</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6 text-center">
+          <div class="text-2xl font-bold text-warm-600 mb-1">$39M</div>
+          <div class="text-sm text-gray-600">Artisan</div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-6 text-center">
+          <div class="text-2xl font-bold text-warm-600 mb-1">$30M</div>
+          <div class="text-sm text-gray-600">AuraSell</div>
+        </div>
+      </div>
+
+      <div class="bg-warm-50 border border-warm-200 rounded-2xl p-8 text-center">
+        <p class="text-lg text-gray-700">
+          <strong>Proxy du marché agent IA global :</strong> si ça marche pour la vente, ça marche partout.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problème -->
+  <section class="py-20 section-warm">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">Pourquoi ça ne marche pas (encore)</h2>
+
+          <div class="space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm">
+              <h3 class="font-bold text-lg mb-2 text-red-600">Les agents IA veulent tout faire</h3>
+              <p class="text-gray-600">Sourcing + enrichissement + rédaction + envoi + suivi... mais n'excellent nulle part.</p>
+              <p class="text-sm text-gray-500 mt-2">Résultat : déception et churn élevé.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm">
+              <h3 class="font-bold text-lg mb-2 text-red-600">Confrontation inévitable avec le CRM</h3>
+              <p class="text-gray-600">Le SDR IA doit s'intégrer à Salesforce/HubSpot... mais veut aussi le remplacer.</p>
+              <p class="text-sm text-gray-500 mt-2">Conflit de périmètre = friction adoption.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <img src="slide3-challenges.png" alt="Agent IA débordé" class="rounded-2xl shadow-lg max-w-sm">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Enrichment -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Le marché adjacent : Data Enrichment</h2>
+        <p class="text-gray-600">Clay ($1.25B), Harmonic, Apollo... promettent d'enrichir n'importe quelle cible.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
+          <div class="text-2xl mb-3">🇫🇷</div>
+          <h3 class="font-bold mb-2">Cabinets comptables FR</h3>
+          <p class="text-gray-600 text-sm">Données incomplètes</p>
+        </div>
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
+          <div class="text-2xl mb-3">🏭</div>
+          <h3 class="font-bold mb-2">PME industrielles</h3>
+          <p class="text-gray-600 text-sm">Pas de coverage</p>
+        </div>
+        <div class="bg-red-50 border border-red-100 rounded-2xl p-6">
+          <div class="text-2xl mb-3">🚀</div>
+          <h3 class="font-bold mb-2">Startups early-stage</h3>
+          <p class="text-gray-600 text-sm">Approximatif</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-100 rounded-2xl p-8 text-center">
+        <p class="text-gray-700">
+          <strong>En réalité :</strong> overlay IA sur Apollo.io / Crunchbase.
+          Les sources restent les mêmes, <span class="text-red-600">l'IA ne crée pas de données.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opportunité -->
+  <section class="py-20 section-sky">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="flex justify-center order-2 md:order-1">
+          <img src="slide7-opportunite.png" alt="Opportunité" class="rounded-2xl shadow-lg max-w-sm">
+        </div>
+
+        <div class="order-1 md:order-2">
+          <h2 class="text-3xl font-bold mb-6">L'opportunité Otomata</h2>
+          <p class="text-gray-600 mb-8">Les solutions existantes font de l'outbound automatisé. <br><strong>Personne ne fait bien la préparation de l'outbound.</strong></p>
+
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div>
+                <h3 class="font-bold">Création de listings comptes</h3>
+                <p class="text-gray-600 text-sm">Identifier les cibles sur critères spécifiques</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div>
+                <h3 class="font-bold">Enrichissement custom</h3>
+                <p class="text-gray-600 text-sm">Sources FR/EU, données non-standard</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+              <div>
+                <h3 class="font-bold">Mapping commercial</h3>
+                <p class="text-gray-600 text-sm">Qualifier, scorer, prioriser</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approche -->
+  <section id="approche" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Notre approche</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Une plateforme agentique qu'on utilise nous-mêmes. On itère. On améliore.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="bg-gray-900 text-white rounded-2xl p-8 font-mono text-sm mb-8">
+            <div class="text-gray-400 mb-4">Outils + Instructions → Agents → Résultats</div>
+            <div class="space-y-3">
+              <div class="flex gap-3">
+                <span class="text-sky-400">Outils</span>
+                <span class="text-gray-500">→</span>
+                <span class="text-gray-300">scrapers, enrichisseurs, connecteurs CRM</span>
+              </div>
+              <div class="flex gap-3">
+                <span class="text-warm-400">Instructions</span>
+                <span class="text-gray-500">→</span>
+                <span class="text-gray-300">workflows structurés, prompts optimisés</span>
+              </div>
+              <div class="flex gap-3">
+                <span class="text-green-400">Agents</span>
+                <span class="text-gray-500">→</span>
+                <span class="text-gray-300">exécution autonome supervisée</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-warm-50 border border-warm-200 rounded-2xl p-6">
+            <h3 class="font-bold mb-2">Le modèle économique</h3>
+            <p class="text-gray-700 text-sm">
+              La techno est offerte (ou difficile à pricer isolément). <strong>On vend du temps (TJM haut).</strong>
+              Le gain de temps grâce à la plateforme est partagé : vous payez moins, on délivre plus vite.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <img src="slide8-workflow.png" alt="Workflow Otomata" class="rounded-2xl shadow-lg max-w-sm">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Résultats -->
+  <section class="py-16 bg-gray-900 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl font-bold">Résultats concrets</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-bold text-warm-400">354</div>
+          <div class="text-gray-400 mt-2">entreprises qualifiées</div>
+          <div class="text-gray-500 text-sm">Cabinets comptables FR</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-warm-400">1 770</div>
+          <div class="text-gray-400 mt-2">contacts décideurs</div>
+          <div class="text-gray-500 text-sm">Emails + téléphones</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-warm-400">~2min</div>
+          <div class="text-gray-400 mt-2">par entreprise</div>
+          <div class="text-gray-500 text-sm">Enrichissement complet</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-warm-400">96%</div>
+          <div class="text-gray-400 mt-2">couverture contacts</div>
+          <div class="text-gray-500 text-sm">Sources FR combinées</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-24 hero-bg">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6 text-gray-900">Vos prochaines listes, prêtes en quelques jours</h2>
+      <p class="text-gray-700 mb-10 text-lg">
+        Dites-nous votre cible idéale. On vous montre ce qu'on peut produire.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:alexis@321founded.com" class="bg-gray-900 text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-700 transition shadow-lg">
+          Demander une démo
+        </a>
+        <a href="https://cal.com/alexis-321/30min" target="_blank" class="bg-white border border-gray-200 px-10 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition">
+          Prendre RDV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-gray-500 text-sm">
+        <span class="font-semibold text-gray-700">Otomata</span> · Plateforme agentique pour l'acquisition B2B
+      </div>
+      <div class="text-gray-400 text-sm">
+        Une solution 321 Founded
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
