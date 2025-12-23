@@ -1,0 +1,112 @@
+{% extends "app/base.html" %}
+
+{% block title %}Dashboard - Otomata{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+
+{% block content %}
+<!-- Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+  <div class="bg-white rounded-xl p-6 border border-gray-200">
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-10 h-10 bg-sky-100 rounded-lg flex items-center justify-center">
+        <svg class="w-5 h-5 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="text-2xl font-bold text-gray-900">{{ stats.workflows }}</div>
+    <div class="text-sm text-gray-500">Workflows actifs</div>
+  </div>
+
+  <div class="bg-white rounded-xl p-6 border border-gray-200">
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center">
+        <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="text-2xl font-bold text-gray-900">{{ stats.runs_today }}</div>
+    <div class="text-sm text-gray-500">Runs aujourd'hui</div>
+  </div>
+
+  <div class="bg-white rounded-xl p-6 border border-gray-200">
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+        <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="text-2xl font-bold text-gray-900">{{ stats.items_processed }}</div>
+    <div class="text-sm text-gray-500">Items traités</div>
+  </div>
+
+  <div class="bg-white rounded-xl p-6 border border-gray-200">
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center">
+        <svg class="w-5 h-5 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="text-2xl font-bold text-gray-900">{{ stats.success_rate }}%</div>
+    <div class="text-sm text-gray-500">Taux de succès</div>
+  </div>
+</div>
+
+<!-- Recent activity -->
+<div class="grid lg:grid-cols-2 gap-6">
+  <!-- Recent runs -->
+  <div class="bg-white rounded-xl border border-gray-200">
+    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+      <h2 class="font-semibold text-gray-900">Runs récents</h2>
+      <a href="{% url 'backoffice:runs' %}" class="text-sm text-sky-600 hover:text-sky-700">Voir tout</a>
+    </div>
+    <div class="divide-y divide-gray-100">
+      {% for run in recent_runs %}
+      <a href="{% url 'backoffice:run_detail' run.id %}" class="block px-6 py-4 hover:bg-gray-50 transition">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-medium text-gray-900">{{ run.workflow }}</div>
+            <div class="text-sm text-gray-500">{{ run.started }}</div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium
+            {% if run.status == 'completed' %}bg-emerald-100 text-emerald-700
+            {% elif run.status == 'running' %}bg-sky-100 text-sky-700
+            {% else %}bg-red-100 text-red-700{% endif %}">
+            {{ run.status }}
+          </span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Workflows -->
+  <div class="bg-white rounded-xl border border-gray-200">
+    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+      <h2 class="font-semibold text-gray-900">Workflows</h2>
+      <a href="{% url 'backoffice:workflows' %}" class="text-sm text-sky-600 hover:text-sky-700">Voir tout</a>
+    </div>
+    <div class="divide-y divide-gray-100">
+      {% for workflow in workflows %}
+      <a href="{% url 'backoffice:workflow_detail' workflow.id %}" class="block px-6 py-4 hover:bg-gray-50 transition">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-medium text-gray-900">{{ workflow.name }}</div>
+            <div class="text-sm text-gray-500">{{ workflow.runs }} runs</div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium
+            {% if workflow.status == 'active' %}bg-emerald-100 text-emerald-700
+            {% elif workflow.status == 'paused' %}bg-amber-100 text-amber-700
+            {% else %}bg-gray-100 text-gray-700{% endif %}">
+            {{ workflow.status }}
+          </span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

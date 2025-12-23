@@ -1,0 +1,55 @@
+{% extends "app/base.html" %}
+
+{% block title %}Workflows - Otomata{% endblock %}
+{% block page_title %}Workflows{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-xl border border-gray-200">
+  <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+    <h2 class="font-semibold text-gray-900">Tous les workflows</h2>
+    <button class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">
+      + Nouveau workflow
+    </button>
+  </div>
+
+  <table class="w-full">
+    <thead class="bg-gray-50 border-b border-gray-200">
+      <tr>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Nom</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Runs</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Dernier run</th>
+        <th class="text-right px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100">
+      {% for workflow in workflows %}
+      <tr class="hover:bg-gray-50">
+        <td class="px-6 py-4">
+          <a href="{% url 'backoffice:workflow_detail' workflow.id %}" class="font-medium text-gray-900 hover:text-sky-600">
+            {{ workflow.name }}
+          </a>
+        </td>
+        <td class="px-6 py-4">
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium
+            {% if workflow.status == 'active' %}bg-emerald-100 text-emerald-700
+            {% elif workflow.status == 'paused' %}bg-amber-100 text-amber-700
+            {% else %}bg-gray-100 text-gray-700{% endif %}">
+            {{ workflow.status }}
+          </span>
+        </td>
+        <td class="px-6 py-4 text-gray-500">{{ workflow.runs }}</td>
+        <td class="px-6 py-4 text-gray-500">{{ workflow.last_run|default:"-" }}</td>
+        <td class="px-6 py-4 text-right">
+          <a href="{% url 'backoffice:workflow_detail' workflow.id %}" class="text-gray-400 hover:text-gray-600">
+            <svg class="w-5 h-5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

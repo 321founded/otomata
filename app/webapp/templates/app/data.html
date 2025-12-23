@@ -1,0 +1,64 @@
+{% extends "app/base.html" %}
+
+{% block title %}Data - Otomata{% endblock %}
+{% block page_title %}Data{% endblock %}
+
+{% block content %}
+<div class="bg-white rounded-xl border border-gray-200">
+  <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+    <h2 class="font-semibold text-gray-900">Données enrichies</h2>
+    <div class="flex gap-2">
+      <button class="border border-gray-300 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 transition">
+        Filtrer
+      </button>
+      <button class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">
+        Exporter CSV
+      </button>
+    </div>
+  </div>
+
+  <table class="w-full">
+    <thead class="bg-gray-50 border-b border-gray-200">
+      <tr>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Entreprise</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Domaine</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Effectif</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Secteur</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Score</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100">
+      {% for item in items %}
+      <tr class="hover:bg-gray-50">
+        <td class="px-6 py-4">
+          <div class="font-medium text-gray-900">{{ item.company }}</div>
+        </td>
+        <td class="px-6 py-4">
+          <a href="https://{{ item.domain }}" target="_blank" class="text-sky-600 hover:text-sky-700">
+            {{ item.domain }}
+          </a>
+        </td>
+        <td class="px-6 py-4 text-gray-500">{{ item.employees }}</td>
+        <td class="px-6 py-4">
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+            {{ item.industry }}
+          </span>
+        </td>
+        <td class="px-6 py-4">
+          <div class="flex items-center gap-2">
+            <div class="w-16 h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div class="h-full rounded-full
+                {% if item.score >= 80 %}bg-emerald-500
+                {% elif item.score >= 60 %}bg-amber-500
+                {% else %}bg-red-500{% endif %}"
+                style="width: {{ item.score }}%"></div>
+            </div>
+            <span class="text-sm text-gray-600">{{ item.score }}</span>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

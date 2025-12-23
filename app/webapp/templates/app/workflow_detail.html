@@ -1,0 +1,102 @@
+{% extends "app/base.html" %}
+
+{% block title %}{{ workflow.name }} - Otomata{% endblock %}
+{% block page_title %}{{ workflow.name }}{% endblock %}
+
+{% block content %}
+<!-- Workflow info -->
+<div class="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+  <div class="flex items-center justify-between mb-6">
+    <div class="flex items-center gap-4">
+      <span class="px-3 py-1 rounded-full text-sm font-medium
+        {% if workflow.status == 'active' %}bg-emerald-100 text-emerald-700
+        {% elif workflow.status == 'paused' %}bg-amber-100 text-amber-700
+        {% else %}bg-gray-100 text-gray-700{% endif %}">
+        {{ workflow.status }}
+      </span>
+      <span class="text-gray-500">{{ workflow.runs }} runs</span>
+    </div>
+    <div class="flex gap-2">
+      <button class="border border-gray-300 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 transition">
+        Éditer
+      </button>
+      <button class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">
+        Lancer
+      </button>
+    </div>
+  </div>
+
+  <!-- Steps (mock) -->
+  <h3 class="font-semibold text-gray-900 mb-4">Étapes du workflow</h3>
+  <div class="space-y-3">
+    <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+      <div class="w-8 h-8 bg-sky-500 text-white rounded-lg flex items-center justify-center text-sm font-medium">1</div>
+      <div>
+        <div class="font-medium text-gray-900">Récupération des données</div>
+        <div class="text-sm text-gray-500">API source + filtres</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+      <div class="w-8 h-8 bg-amber-500 text-white rounded-lg flex items-center justify-center text-sm font-medium">2</div>
+      <div>
+        <div class="font-medium text-gray-900">Enrichissement</div>
+        <div class="text-sm text-gray-500">Ajout contacts + emails</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+      <div class="w-8 h-8 bg-emerald-500 text-white rounded-lg flex items-center justify-center text-sm font-medium">3</div>
+      <div>
+        <div class="font-medium text-gray-900">Export</div>
+        <div class="text-sm text-gray-500">CSV + notification Slack</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Runs history -->
+<div class="bg-white rounded-xl border border-gray-200">
+  <div class="px-6 py-4 border-b border-gray-200">
+    <h2 class="font-semibold text-gray-900">Historique des runs</h2>
+  </div>
+
+  {% if runs %}
+  <table class="w-full">
+    <thead class="bg-gray-50 border-b border-gray-200">
+      <tr>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Démarré</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Durée</th>
+        <th class="text-left px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Items</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100">
+      {% for run in runs %}
+      <tr class="hover:bg-gray-50">
+        <td class="px-6 py-4">
+          <a href="{% url 'backoffice:run_detail' run.id %}" class="font-medium text-sky-600 hover:text-sky-700">
+            #{{ run.id }}
+          </a>
+        </td>
+        <td class="px-6 py-4">
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium
+            {% if run.status == 'completed' %}bg-emerald-100 text-emerald-700
+            {% elif run.status == 'running' %}bg-sky-100 text-sky-700
+            {% else %}bg-red-100 text-red-700{% endif %}">
+            {{ run.status }}
+          </span>
+        </td>
+        <td class="px-6 py-4 text-gray-500">{{ run.started }}</td>
+        <td class="px-6 py-4 text-gray-500">{{ run.duration }}</td>
+        <td class="px-6 py-4 text-gray-500">{{ run.items }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <div class="px-6 py-12 text-center text-gray-500">
+    Aucun run pour ce workflow
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Otomata{% endblock %}</title>
+  <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            retro: {
+              orange: '#E67E22',
+              'orange-dark': '#D35400',
+              blue: '#3498DB',
+              'blue-dark': '#2980B9',
+              green: '#27AE60',
+              'green-dark': '#1E8449',
+              cream: '#FDF6E3',
+              'cream-dark': '#F5E6D3',
+              yellow: '#F4D03F',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-bg {
+      background: linear-gradient(180deg, #FDF6E3 0%, #F5E6D3 50%, #E8F6F3 100%);
+    }
+    .retro-gradient {
+      background: linear-gradient(135deg, #E67E22 0%, #F4D03F 50%, #3498DB 100%);
+    }
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="font-sans text-gray-900 antialiased bg-white">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full bg-retro-cream/90 backdrop-blur-md z-50 border-b border-retro-orange/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/" class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg retro-gradient"></div>
+        <span class="text-xl font-semibold text-gray-900">otomata</span>
+      </a>
+      <div class="flex items-center gap-6">
+        {% block nav_links %}
+        <a href="/#usecases" class="text-gray-600 hover:text-retro-orange text-sm transition">Use cases</a>
+        <a href="/#comment" class="text-gray-600 hover:text-retro-orange text-sm transition">Comment</a>
+        {% endblock %}
+        <a href="{% url 'backoffice:login' %}" class="bg-retro-orange text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-retro-orange-dark transition">
+          Connexion
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+  <!-- Footer -->
+  <footer class="py-12 bg-retro-cream border-t border-retro-orange/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-lg retro-gradient"></div>
+            <span class="text-xl font-semibold text-gray-900">otomata</span>
+          </div>
+          <p class="text-gray-600 text-sm">{% block footer_tagline %}Automatisez vos process avec des agents IA{% endblock %}</p>
+        </div>
+        <div class="flex gap-12">
+          <div>
+            <h4 class="font-semibold text-sm mb-3 text-retro-orange-dark">Solutions</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><a href="/" class="hover:text-retro-orange">Process Automation</a></li>
+              <li><a href="/sdr-agent/" class="hover:text-retro-orange">SDR Agent</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm mb-3 text-retro-blue-dark">Contact</h4>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li><a href="mailto:alexis@321founded.com" class="hover:text-retro-blue">Email</a></li>
+              <li><a href="https://cal.com/alexis-321/30min" class="hover:text-retro-blue">Rendez-vous</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-retro-orange/10 text-center text-gray-500 text-sm">
+        Une solution <a href="https://321founded.com" class="text-retro-orange hover:text-retro-orange-dark">321 Founded</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

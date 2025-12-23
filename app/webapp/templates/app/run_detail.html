@@ -1,0 +1,70 @@
+{% extends "app/base.html" %}
+
+{% block title %}Run #{{ run.id }} - Otomata{% endblock %}
+{% block page_title %}Run #{{ run.id }}{% endblock %}
+
+{% block content %}
+<!-- Run info -->
+<div class="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+  <div class="flex items-center justify-between mb-6">
+    <div class="flex items-center gap-4">
+      <span class="px-3 py-1 rounded-full text-sm font-medium
+        {% if run.status == 'completed' %}bg-emerald-100 text-emerald-700
+        {% elif run.status == 'running' %}bg-sky-100 text-sky-700
+        {% else %}bg-red-100 text-red-700{% endif %}">
+        {{ run.status }}
+      </span>
+      <span class="text-gray-500">{{ run.workflow }}</span>
+    </div>
+    <div class="flex gap-2">
+      {% if run.status == 'running' %}
+      <button class="border border-red-300 text-red-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-red-50 transition">
+        Arrêter
+      </button>
+      {% else %}
+      <button class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">
+        Relancer
+      </button>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="grid grid-cols-3 gap-6">
+    <div class="bg-gray-50 rounded-lg p-4">
+      <div class="text-sm text-gray-500 mb-1">Démarré</div>
+      <div class="font-medium text-gray-900">{{ run.started }}</div>
+    </div>
+    <div class="bg-gray-50 rounded-lg p-4">
+      <div class="text-sm text-gray-500 mb-1">Durée</div>
+      <div class="font-medium text-gray-900">{{ run.duration }}</div>
+    </div>
+    <div class="bg-gray-50 rounded-lg p-4">
+      <div class="text-sm text-gray-500 mb-1">Items traités</div>
+      <div class="font-medium text-gray-900">{{ run.items }}</div>
+    </div>
+  </div>
+</div>
+
+<!-- Logs -->
+<div class="bg-white rounded-xl border border-gray-200">
+  <div class="px-6 py-4 border-b border-gray-200">
+    <h2 class="font-semibold text-gray-900">Logs</h2>
+  </div>
+
+  <div class="p-4 bg-gray-900 rounded-b-xl font-mono text-sm">
+    {% for log in logs %}
+    <div class="flex gap-4 py-1 {% if log.level == 'success' %}text-emerald-400{% elif log.level == 'error' %}text-red-400{% else %}text-gray-300{% endif %}">
+      <span class="text-gray-500">{{ log.time }}</span>
+      <span class="uppercase text-xs py-0.5 px-1.5 rounded
+        {% if log.level == 'success' %}bg-emerald-900 text-emerald-300
+        {% elif log.level == 'error' %}bg-red-900 text-red-300
+        {% else %}bg-gray-800 text-gray-400{% endif %}">
+        {{ log.level }}
+      </span>
+      <span>{{ log.message }}</span>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

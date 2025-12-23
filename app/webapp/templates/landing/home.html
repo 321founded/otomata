@@ -1,0 +1,228 @@
+{% extends "landing/base.html" %}
+{% load static %}
+
+{% block title %}Otomata - Automatisez vos process avec des agents IA{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="hero-bg pt-32 pb-16 px-6 relative overflow-hidden min-h-[90vh] flex items-center">
+  <!-- Background illustration -->
+  <div class="absolute inset-0">
+    <img src="{% static 'images/reference.png' %}" alt="" class="w-full h-full object-cover opacity-40">
+  </div>
+
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <a href="#usecases" class="inline-block bg-white/90 backdrop-blur border border-retro-orange/30 px-4 py-1.5 rounded-full text-sm font-medium mb-8 text-retro-orange-dark hover:bg-white transition">
+      Libérez votre équipe des tâches répétitives
+    </a>
+
+    <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-tight mb-6 text-gray-900">
+      <span class="italic">Automatisez vos process</span><br>
+      <span class="italic">avec des agents IA.</span>
+    </h1>
+
+    <p class="text-xl text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed">
+      Des agents autonomes qui exécutent vos workflows métier. Zéro erreur, zéro charge mentale. <strong class="text-gray-900">Vous pilotez, ils exécutent.</strong>
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#waitlist" class="bg-retro-orange text-white px-8 py-4 rounded-lg font-medium hover:bg-retro-orange-dark transition shadow-lg">
+        Rejoindre la waitlist
+      </a>
+      <a href="https://cal.com/alexis-321/30min" target="_blank" class="bg-white border border-retro-blue px-8 py-4 rounded-lg font-medium text-retro-blue hover:bg-retro-blue hover:text-white transition">
+        Échanger sur votre besoin
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Use cases -->
+<section id="usecases" class="py-24 bg-retro-cream">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="font-display text-4xl italic text-center mb-4">Ils auraient adoré Otomata</h2>
+    <p class="text-gray-600 text-center mb-16 max-w-xl mx-auto">Des process répétitifs ? On les automatise.</p>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Use case 1 - RH -->
+      <div class="bg-white rounded-2xl p-8 border border-retro-blue/20">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-retro-blue/10 rounded-full flex items-center justify-center text-lg text-retro-blue">
+            S
+          </div>
+          <div>
+            <div class="font-medium">Sophie</div>
+            <div class="text-sm text-gray-500">RH, scale-up 80 personnes</div>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4 italic">"Je passe 2h par nouvel employé à créer ses accès, envoyer les docs, planifier les rdv... C'est mécanique."</p>
+        <div class="bg-retro-cream rounded-xl p-4 border border-retro-green/20">
+          <div class="text-sm font-medium text-retro-green mb-1">Solution Otomata</div>
+          <p class="text-sm text-gray-600">Agent d'onboarding automatisé : création comptes, envoi docs, planning meetings, suivi à J+7/J+30.</p>
+        </div>
+      </div>
+
+      <!-- Use case 2 - Finance -->
+      <div class="bg-white rounded-2xl p-8 border border-retro-orange/20">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-retro-orange/10 rounded-full flex items-center justify-center text-lg text-retro-orange">
+            M
+          </div>
+          <div>
+            <div class="font-medium">Marc</div>
+            <div class="text-sm text-gray-500">DAF, PME industrielle</div>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4 italic">"Le rapprochement factures/bons de commande prend 3 jours par mois. On fait ça dans Excel."</p>
+        <div class="bg-retro-cream rounded-xl p-4 border border-retro-green/20">
+          <div class="text-sm font-medium text-retro-green mb-1">Solution Otomata</div>
+          <p class="text-sm text-gray-600">Agent de rapprochement : extraction factures, matching BDC, alertes écarts, export comptable.</p>
+        </div>
+      </div>
+
+      <!-- Use case 3 - Ops -->
+      <div class="bg-white rounded-2xl p-8 border border-retro-yellow/30">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-retro-yellow/20 rounded-full flex items-center justify-center text-lg text-retro-orange-dark">
+            T
+          </div>
+          <div>
+            <div class="font-medium">Thomas</div>
+            <div class="text-sm text-gray-500">Ops Manager, e-commerce</div>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4 italic">"Je check 15 fournisseurs chaque semaine pour les délais, les prix, les ruptures. C'est un calvaire."</p>
+        <div class="bg-retro-cream rounded-xl p-4 border border-retro-green/20">
+          <div class="text-sm font-medium text-retro-green mb-1">Solution Otomata</div>
+          <p class="text-sm text-gray-600">Agent de suivi fournisseurs : scraping catalogues, alertes prix/stocks, rapport hebdo automatique.</p>
+        </div>
+      </div>
+
+      <!-- Use case 4 - Marketing -->
+      <div class="bg-white rounded-2xl p-8 border border-retro-green/20">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-retro-green/10 rounded-full flex items-center justify-center text-lg text-retro-green">
+            L
+          </div>
+          <div>
+            <div class="font-medium">Léa</div>
+            <div class="text-sm text-gray-500">Marketing Manager, SaaS B2B</div>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4 italic">"La veille concurrentielle c'est vital mais personne n'a le temps. On rate des trucs importants."</p>
+        <div class="bg-retro-cream rounded-xl p-4 border border-retro-green/20">
+          <div class="text-sm font-medium text-retro-green mb-1">Solution Otomata</div>
+          <p class="text-sm text-gray-600">Agent de veille : monitoring sites/réseaux, détection nouveautés, synthèse hebdo avec alertes.</p>
+        </div>
+      </div>
+
+      <!-- Use case 5 - Support -->
+      <div class="bg-white rounded-2xl p-8 border border-retro-blue/20 md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-retro-blue/10 rounded-full flex items-center justify-center text-lg text-retro-blue-dark">
+            A
+          </div>
+          <div>
+            <div class="font-medium">Antoine</div>
+            <div class="text-sm text-gray-500">Head of Support, startup</div>
+          </div>
+        </div>
+        <p class="text-gray-600 mb-4 italic">"On reçoit 200 tickets/jour. Le triage manuel prend un temps fou avant même de commencer."</p>
+        <div class="bg-retro-cream rounded-xl p-4 border border-retro-green/20">
+          <div class="text-sm font-medium text-retro-green mb-1">Solution Otomata</div>
+          <p class="text-sm text-gray-600">Agent de triage : classification auto, routing équipes, réponses suggérées, escalade intelligente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comment ça marche -->
+<section id="comment" class="py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="font-display text-4xl italic text-center mb-4">Comment ça marche</h2>
+    <p class="text-gray-500 text-center mb-12 max-w-xl mx-auto">Des agents IA autonomes qui orchestrent vos outils et exécutent vos workflows.</p>
+
+    <!-- SVG Diagram -->
+    <div class="rounded-2xl shadow-xl overflow-hidden mb-16 border border-gray-200 bg-white">
+      <img src="{% static 'images/schema-script-agentique.svg' %}" alt="Architecture Otomata" class="w-full">
+    </div>
+
+    <!-- Process steps -->
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <div class="w-10 h-10 bg-sky-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">1</div>
+        <h3 class="font-semibold mb-2">Brief</h3>
+        <p class="text-gray-500 text-sm">Vous décrivez votre process et vos contraintes</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <div class="w-10 h-10 bg-amber-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">2</div>
+        <h3 class="font-semibold mb-2">Configuration</h3>
+        <p class="text-gray-500 text-sm">On configure les agents avec vos spécifications</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <div class="w-10 h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">3</div>
+        <h3 class="font-semibold mb-2">Exécution</h3>
+        <p class="text-gray-500 text-sm">Les agents exécutent le workflow automatiquement</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <div class="w-10 h-10 bg-emerald-500 text-white rounded-lg flex items-center justify-center font-bold mb-4">4</div>
+        <h3 class="font-semibold mb-2">Résultats</h3>
+        <p class="text-gray-500 text-sm">Vous recevez les outputs dans vos outils</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Avantages -->
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Zéro erreur</h3>
+        <p class="text-gray-500">Les agents suivent vos règles à la lettre. Pas d'oubli, pas d'approximation.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-sky-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">24/7</h3>
+        <p class="text-gray-500">Les agents travaillent en continu. Nuit, week-end, jours fériés.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold mb-2">ROI immédiat</h3>
+        <p class="text-gray-500">Pas d'abonnement SaaS. Vous payez le résultat, pas l'outil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Waitlist -->
+<section id="waitlist" class="py-24 hero-bg relative overflow-hidden">
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <h2 class="font-display text-4xl md:text-5xl italic mb-6 text-gray-900">Prêt à automatiser ?</h2>
+    <p class="text-gray-600 mb-10 text-lg">
+      Décrivez votre process. On vous montre comment l'automatiser.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:alexis@321founded.com?subject=Otomata - Expression de besoin" class="bg-gray-900 text-white px-10 py-4 rounded-lg font-medium text-lg hover:bg-gray-800 transition shadow-lg">
+        Exprimer mon besoin
+      </a>
+      <a href="https://cal.com/alexis-321/30min" target="_blank" class="bg-white border border-gray-300 px-10 py-4 rounded-lg font-medium text-lg hover:bg-gray-50 transition">
+        Prendre RDV
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

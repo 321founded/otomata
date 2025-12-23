@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Otomata{% endblock %}</title>
+  <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans text-gray-900 antialiased bg-gray-100">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-900 text-white flex flex-col">
+      <!-- Logo -->
+      <div class="p-6 border-b border-gray-800">
+        <a href="{% url 'backoffice:dashboard' %}" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-300 via-amber-400 to-orange-400"></div>
+          <span class="text-xl font-semibold">otomata</span>
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex-1 p-4">
+        <ul class="space-y-1">
+          <li>
+            <a href="{% url 'backoffice:dashboard' %}" class="flex items-center gap-3 px-4 py-2.5 rounded-lg {% if request.resolver_match.url_name == 'dashboard' %}bg-gray-800 text-white{% else %}text-gray-400 hover:bg-gray-800 hover:text-white{% endif %} transition">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'backoffice:workflows' %}" class="flex items-center gap-3 px-4 py-2.5 rounded-lg {% if 'workflow' in request.resolver_match.url_name %}bg-gray-800 text-white{% else %}text-gray-400 hover:bg-gray-800 hover:text-white{% endif %} transition">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+              </svg>
+              Workflows
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'backoffice:runs' %}" class="flex items-center gap-3 px-4 py-2.5 rounded-lg {% if 'run' in request.resolver_match.url_name %}bg-gray-800 text-white{% else %}text-gray-400 hover:bg-gray-800 hover:text-white{% endif %} transition">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              Runs
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'backoffice:data' %}" class="flex items-center gap-3 px-4 py-2.5 rounded-lg {% if request.resolver_match.url_name == 'data' %}bg-gray-800 text-white{% else %}text-gray-400 hover:bg-gray-800 hover:text-white{% endif %} transition">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+              </svg>
+              Data
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- User menu -->
+      <div class="p-4 border-t border-gray-800">
+        <a href="{% url 'backoffice:logout' %}" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-400 hover:bg-gray-800 hover:text-white transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+          </svg>
+          Déconnexion
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 overflow-auto">
+      <!-- Top bar -->
+      <header class="bg-white border-b border-gray-200 px-8 py-4">
+        <div class="flex justify-between items-center">
+          <h1 class="text-xl font-semibold text-gray-900">{% block page_title %}Dashboard{% endblock %}</h1>
+          <div class="flex items-center gap-4">
+            <span class="text-sm text-gray-500">demo@otomata.io</span>
+            <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-sm font-medium text-gray-600">D</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page content -->
+      <div class="p-8">
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+  </div>
+</body>
+</html>
