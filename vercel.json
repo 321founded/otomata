@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app/webapp/config/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.12"
+      }
+    },
+    {
+      "src": "app/webapp/static/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/app/webapp/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "app/webapp/config/wsgi.py"
+    }
+  ],
+  "installCommand": "pip install -r app/requirements.txt",
+  "outputDirectory": "app/webapp"
+}
